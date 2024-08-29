@@ -1,0 +1,107 @@
+---
+import Aboutme from "../components/Aboutme.astro";
+import Badge from "../components/Badge.astro";
+import Contact from "../components/Contact.astro";
+import About from "../components/icons/About.astro";
+import Bookmark from "../components/icons/Bookmark.astro";
+import Code from "../components/icons/Code.astro";
+import ContactIcon from "../components/icons/Contact.astro";
+import Github from "../components/icons/Github.astro";
+import Gmail from "../components/icons/Gmail.astro";
+import LinkedIn from "../components/icons/LinkedIn.astro";
+import Projects from "../components/Projects.astro";
+import Section from "../components/Section.astro";
+import SocialLink from "../components/SocialLink.astro";
+import Timeline from "../components/timeline/Timeline.astro";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout
+  title="Alexander Ortiz - Desarrollador Full Stack"
+  description="Analista Programador con experiencia en proyectos importantes."
+>
+  <main class="px-4">
+    <Section class="py-44 pb-32">
+      <img
+        class="rounded-full size-16 mb-4"
+        src="./profile.jpeg"
+        alt="Avatar logo"
+      />
+      <h1
+        class="text-white mt-2 md:mt-0 text-xl sm:text-3xl md:text-5xl font-bold flex flex-row gap-x-4 pb-5 md:pb-10"
+      >
+        Hola! Soy Alexander
+        <a
+          href="https://cl.linkedin.com/in/alexander-ortiz-cortes-07843a16b"
+          target="_blank"
+          class="flex justify-center items-center"
+          ><Badge>Disponible para trabajar</Badge></a
+        >
+      </h1>
+      <h2 class="text-xl md:text-3xl opacity-80 text-wrap mb-10 md:mb-0">
+        <span>+ 5 años de experiencia.</span><span class="text-yellow-200/90">
+          Desarrollador Full Stack y Mobile.</span
+        ><span class="text-red-100/90"> De Santiago, Chile 🇨🇱.</span> Soy un apasionado
+        por la tecnología, comprometido a realizar aplicaciones únicas.
+      </h2>
+      <ul class="flex gap-x-2 mt-4 flex-wrap">
+        <li class="mb-5">
+          <SocialLink
+            href="https://cl.linkedin.com/in/alexander-ortiz-cortes-07843a16b"
+          >
+            <LinkedIn class="size-6" />
+            LinkedIn
+          </SocialLink>
+        </li>
+        <li>
+          <SocialLink href="https://github.com/Alexander-001">
+            <Github class="size-6" />
+            Github
+          </SocialLink>
+        </li>
+        <li>
+          <SocialLink href="mailto:alexander.ortiz.1098@gmail.com">
+            <Gmail class="size-6" />
+            alexander.ortiz.1098@gmail.com
+          </SocialLink>
+        </li>
+      </ul>
+    </Section>
+    <Section id="experience">
+      <h2
+        class="text-3xl md:text-5xl font-semibold mb-6 flex gap-x-3 items-center"
+      >
+        <Bookmark class="size-8 md:size-12" />
+        Experiencia laboral
+      </h2>
+      <Timeline />
+    </Section>
+    <Section id="projects">
+      <h2
+        class="text-3xl md:text-5xl font-semibold mb-6 flex gap-x-3 items-center"
+      >
+        <Code class="size-8 md:size-12" />
+        Proyectos
+      </h2>
+      <Projects />
+    </Section>
+    <Section id="about">
+      <h2
+        class="text-3xl md:text-5xl font-semibold mb-6 flex gap-x-3 items-center"
+      >
+        <About class="size-8 md:size-12" />
+        Sobre mí
+      </h2>
+      <Aboutme />
+    </Section>
+    <Section id="contact">
+      <h2
+        class="text-3xl md:text-5xl font-semibold mb-6 flex gap-x-3 items-center"
+      >
+        <ContactIcon class="size-8 md:size-12" />
+        Contacto
+      </h2>
+      <Contact />
+    </Section>
+  </main>
+</Layout>

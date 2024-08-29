@@ -1,0 +1,146 @@
+---
+import Angular from "../components/icons/Angular.astro";
+import CSS from "../components/icons/Css.astro";
+import JavasScript from "../components/icons/JavaScript.astro";
+import React from "../components/icons/React.astro";
+import TypeScript from "../components/icons/TypeScript.astro";
+import Direction from "./icons/Direction.astro";
+import Github from "./icons/Github.astro";
+import Mongo from "./icons/Mongo.astro";
+import Node from "./icons/Node.astro";
+import SocialLink from "./SocialLink.astro";
+
+const tagsColor = {
+  react: {
+    name: "ReactJS",
+    class: "bg-black text-white bg-gray-800 text-lg md:text-xl",
+    icon: React,
+  },
+  css: {
+    name: "CSS",
+    class: "bg-white text-black bg-sky-100/90 text-lg md:text-xl",
+    icon: CSS,
+  },
+  javascript: {
+    name: "JavaScript",
+    class: "bg-black text-black bg-yellow-100 text-lg md:text-xl",
+    icon: JavasScript,
+  },
+  typescript: {
+    name: "TypeScript",
+    class: "bg-gray-800 text-white text-lg md:text-xl",
+    icon: TypeScript,
+  },
+  angular: {
+    name: "Angular",
+    class: "bg-pink-200/70 text-black text-lg md:text-xl",
+    icon: Angular,
+  },
+  nodejs: {
+    name: "NodeJS",
+    class: "bg-green-200/70 text-black text-lg md:text-xl",
+    icon: Node,
+  },
+  mongo: {
+    name: "Mongo DB",
+    class: "bg-green-400/70 text-black text-lg md:text-xl",
+    icon: Mongo,
+  },
+};
+
+const projects = [
+  {
+    title: "Totem Autoconsulta",
+    description:
+      "Proyecto realizado para Enel, con el fin de automatizar las consultas de un cliente.",
+    link: "",
+    frontGithub: "",
+    backGithub: "",
+    image: "/autoconsulta.png",
+    tags: [tagsColor.react, tagsColor.css, tagsColor.typescript],
+  },
+  {
+    title: "Tablero Basket",
+    description:
+      "Proyecto personal, con el fin de entregar una solución a los equipos de basketball, para que puedan obtener el marcador global de su partido.",
+    link: "https://alexander-001.github.io/ui-tablero-basket",
+    frontGithub: "https://github.com/Alexander-001/ui-tablero-basket",
+    backGithub: "https://github.com/Alexander-001/ms-tablero-basket",
+    image: "/tablero.png",
+    tags: [
+      tagsColor.angular,
+      tagsColor.css,
+      tagsColor.typescript,
+      tagsColor.nodejs,
+      tagsColor.mongo,
+    ],
+  },
+  {
+    title: "PokeApi",
+    description:
+      "Proyecto personal, con el fin de tener un listado de todos los pokemones junto a sus estadisticas. Fue un proyecto realizado para aprender y entretenerme.",
+    link: "#",
+    frontGithub: "https://github.com/Alexander-001/pokeapifront",
+    backGithub: "https://github.com/Alexander-001/pokeapiserver",
+    image: "/pokemon.png",
+    tags: [
+      tagsColor.react,
+      tagsColor.css,
+      tagsColor.javascript,
+      tagsColor.nodejs,
+    ],
+  },
+];
+---
+
+{
+  projects.map(
+    ({ title, description, link, frontGithub, backGithub, image, tags }) => (
+      <article class="mb-20">
+        <h3 class="text-2xl md:text-4xl font-semibold text-yellow-100 mb-5">
+          {title}
+        </h3>
+        <p class="text-lg md:text-2xl mb-4 text-pretty">{description}</p>
+        <ul class="flex gap-x-2 flex-row mb-2 flex-wrap">
+          {tags.map((tag) => (
+            <li class="mb-5">
+              <span
+                class={`${tag.class} flex gap-x-2 rounded-full text-sm py-1 px-2`}
+              >
+                <tag.icon class="size-4 md:size-8" />
+                {tag.name}
+              </span>
+            </li>
+          ))}
+        </ul>
+        <img
+          class="rounded shadow-2xl shadow-white/10 mt-5"
+          src={image}
+          alt={`Captura de pantalla del proyecto ${image}`}
+        />
+        {link && frontGithub && backGithub && (
+          <ul class="flex gap-x-2 mt-6 flex-wrap">
+            <li>
+              <SocialLink href={frontGithub}>
+                <Github class="size-6" />
+                FrontEnd Github
+              </SocialLink>
+            </li>
+            <li>
+              <SocialLink href={backGithub}>
+                <Github class="size-6" />
+                Backend Github
+              </SocialLink>
+            </li>
+            <li class="mt-5 md:mt-0">
+              <SocialLink href={link}>
+                <Direction class="size-6" />
+                Ver proyecto
+              </SocialLink>
+            </li>
+          </ul>
+        )}
+      </article>
+    )
+  )
+}

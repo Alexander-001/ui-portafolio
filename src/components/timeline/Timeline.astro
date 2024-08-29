@@ -1,0 +1,43 @@
+---
+import TimelineItem from "./TimelineItem.astro";
+
+const experience = [
+  {
+    date: "Actualidad",
+    title: "Desarrollador Full Stack - SII Group",
+    project: "Scotiabank",
+    description:
+      "Encargado de realizar aplicaciones bancarias y otorgarles mantenimiento. Principalmente he migrado aplicativos desarrollados en Visual Basic hacia la libreria ReactJS, consumiendo microservicios Spring Boot Java.",
+    link: "https://sii-group.com/es-CL",
+    messageLink: "SII Group",
+  },
+  {
+    date: "Enero 2021",
+    title: "Desarrollador Front End - NTT Data Europe & LATAM (Everis)",
+    project: "ENEL",
+    description:
+      "Encargado de proyecto autoconsultas el cual fue desarrollado con ReactJS, consumiendo microservicios Java. Proyecto con enfoque en mostrar información a un cliente real a traves de un totem autoconsulta, fue realizado para Enel Chile, Enel Colombia y Enel Colina.",
+    link: "https://cl.nttdata.com",
+    messageLink: "NTT Data Chile",
+  },
+  {
+    date: "Febrero 2019",
+    title: "Desarrollador CMS - NTT Data Europe & LATAM (Everis)",
+    project: "LATAM",
+    description:
+      "Especializado en el software Adobe Experience Manager, en el cual tenia como objetivo migrar todo el contenido del sitio latam.com hacia una nueva versión de Adobe y otorgarle mantenimiento.",
+    link: "https://cl.nttdata.com",
+    messageLink: "NTT Data Chile",
+  },
+];
+---
+
+<ol class="relative border-s border-gray-200 ml-4">
+  {
+    experience.map((exp) => (
+      <li class="mb-10 ms-4">
+        <TimelineItem {...exp} />
+      </li>
+    ))
+  }
+</ol>
