@@ -1,58 +1,60 @@
 ---
-import Angular from "../components/icons/Angular.astro";
-import CSS from "../components/icons/Css.astro";
-import JavasScript from "../components/icons/JavaScript.astro";
-import React from "../components/icons/React.astro";
-import TypeScript from "../components/icons/TypeScript.astro";
-import Direction from "./icons/Direction.astro";
-import Github from "./icons/Github.astro";
-import Mongo from "./icons/Mongo.astro";
-import Node from "./icons/Node.astro";
-import SocialLink from "./SocialLink.astro";
+/* Components */
+import SocialLink from "../../components/SocialLink.astro";
+/* Icons */
+import AngularIcon from "../../icons/Angular.astro";
+import CSSIcon from "../../icons/Css.astro";
+import DirectionIcon from "../../icons/Direction.astro";
+import GithubIcon from "../../icons/Github.astro";
+import JavasScriptIcon from "../../icons/JavaScript.astro";
+import MongoIcon from "../../icons/Mongo.astro";
+import NodeIcon from "../../icons/Node.astro";
+import ReactIcon from "../../icons/React.astro";
+import TypeScriptIcon from "../../icons/TypeScript.astro";
 
 const tagsColor = {
   react: {
-    name: "ReactJS",
+    name: "React",
     class: "bg-black text-white bg-gray-800 text-lg md:text-xl",
-    icon: React,
+    icon: ReactIcon,
   },
   css: {
     name: "CSS",
-    class: "bg-white text-black bg-sky-100/90 text-lg md:text-xl",
-    icon: CSS,
+    class: "bg-white text-white bg-sky-300/70 text-lg md:text-xl",
+    icon: CSSIcon,
   },
   javascript: {
     name: "JavaScript",
-    class: "bg-black text-black bg-yellow-100 text-lg md:text-xl",
-    icon: JavasScript,
+    class: "bg-black text-white bg-yellow-300/60 text-lg md:text-xl",
+    icon: JavasScriptIcon,
   },
   typescript: {
     name: "TypeScript",
-    class: "bg-gray-800 text-white text-lg md:text-xl",
-    icon: TypeScript,
+    class: "bg-blue-600/70 text-white text-lg md:text-xl",
+    icon: TypeScriptIcon,
   },
   angular: {
     name: "Angular",
-    class: "bg-pink-200/70 text-black text-lg md:text-xl",
-    icon: Angular,
+    class: "bg-red-400 text-white text-lg md:text-xl",
+    icon: AngularIcon,
   },
   nodejs: {
     name: "NodeJS",
-    class: "bg-green-200/70 text-black text-lg md:text-xl",
-    icon: Node,
+    class: "bg-green-400/70 text-white text-lg md:text-xl",
+    icon: NodeIcon,
   },
   mongo: {
     name: "Mongo DB",
-    class: "bg-green-400/70 text-black text-lg md:text-xl",
-    icon: Mongo,
+    class: "bg-green-800/70 text-white text-lg md:text-xl",
+    icon: MongoIcon,
   },
 };
 
 const projects = [
   {
-    title: "Totem Autoconsulta",
+    title: "Totem Autoconsulta Enel",
     description:
-      "Proyecto realizado para Enel, con el fin de automatizar las consultas de un cliente.",
+      "Proyecto realizado para Enel, con el objetivo de automatizar las consultas de un cliente. Participe en el desarrollo del Front End.",
     link: "",
     frontGithub: "",
     backGithub: "",
@@ -62,7 +64,7 @@ const projects = [
   {
     title: "Tablero Basket",
     description:
-      "Proyecto personal, con el fin de entregar una solución a los equipos de basketball, para que puedan obtener el marcador global de su partido.",
+      "Proyecto personal, con el objetivo de aportar una solución a los equipos de baloncesto, para que puedan obtener la puntuación global de su partido.",
     link: "https://alexander-001.github.io/ui-tablero-basket",
     frontGithub: "https://github.com/Alexander-001/ui-tablero-basket",
     backGithub: "https://github.com/Alexander-001/ms-tablero-basket",
@@ -79,7 +81,7 @@ const projects = [
     title: "PokeApi",
     description:
       "Proyecto personal, con el fin de tener un listado de todos los pokemones junto a sus estadisticas. Fue un proyecto realizado para aprender y entretenerme.",
-    link: "#",
+    link: "https://capable-taiyaki-2f7948.netlify.app",
     frontGithub: "https://github.com/Alexander-001/pokeapifront",
     backGithub: "https://github.com/Alexander-001/pokeapiserver",
     image: "/pokemon.png",
@@ -122,19 +124,19 @@ const projects = [
           <ul class="flex gap-x-2 mt-6 flex-wrap">
             <li>
               <SocialLink href={frontGithub}>
-                <Github class="size-6" />
+                <GithubIcon class="size-6" />
                 FrontEnd Github
               </SocialLink>
             </li>
             <li>
               <SocialLink href={backGithub}>
-                <Github class="size-6" />
+                <GithubIcon class="size-6" />
                 Backend Github
               </SocialLink>
             </li>
             <li class="mt-5 md:mt-0">
               <SocialLink href={link}>
-                <Direction class="size-6" />
+                <DirectionIcon class="size-6" />
                 Ver proyecto
               </SocialLink>
             </li>

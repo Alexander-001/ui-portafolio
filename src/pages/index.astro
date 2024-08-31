@@ -1,19 +1,25 @@
 ---
-import Aboutme from "../components/Aboutme.astro";
+/* Components */
 import Badge from "../components/Badge.astro";
-import Contact from "../components/Contact.astro";
-import About from "../components/icons/About.astro";
-import Bookmark from "../components/icons/Bookmark.astro";
-import Code from "../components/icons/Code.astro";
-import ContactIcon from "../components/icons/Contact.astro";
-import Github from "../components/icons/Github.astro";
-import Gmail from "../components/icons/Gmail.astro";
-import LinkedIn from "../components/icons/LinkedIn.astro";
-import Projects from "../components/Projects.astro";
 import Section from "../components/Section.astro";
 import SocialLink from "../components/SocialLink.astro";
-import Timeline from "../components/timeline/Timeline.astro";
+/* Icons */
+import AboutIcon from "../icons/About.astro";
+import BookmarkIcon from "../icons/Bookmark.astro";
+import CodeIcon from "../icons/Code.astro";
+import ContactIcon from "../icons/Contact.astro";
+import GithubIcon from "../icons/Github.astro";
+import GmailIcon from "../icons/Gmail.astro";
+import LinkedInIcon from "../icons/LinkedIn.astro";
+import SchoolIcon from "../icons/School.astro";
+/* Layout */
 import Layout from "../layouts/Layout.astro";
+/* Routes */
+import Aboutme from "./routes/Aboutme.astro";
+import Contact from "./routes/Contact.astro";
+import Timeline from "./routes/Experience.astro";
+import Knowledge from "./routes/Knowledge.astro";
+import Projects from "./routes/Projects.astro";
 ---
 
 <Layout
@@ -49,19 +55,19 @@ import Layout from "../layouts/Layout.astro";
           <SocialLink
             href="https://cl.linkedin.com/in/alexander-ortiz-cortes-07843a16b"
           >
-            <LinkedIn class="size-6" />
+            <LinkedInIcon class="size-6" />
             LinkedIn
           </SocialLink>
         </li>
         <li>
           <SocialLink href="https://github.com/Alexander-001">
-            <Github class="size-6" />
+            <GithubIcon class="size-6" />
             Github
           </SocialLink>
         </li>
         <li>
           <SocialLink href="mailto:alexander.ortiz.1098@gmail.com">
-            <Gmail class="size-6" />
+            <GmailIcon class="size-6" />
             alexander.ortiz.1098@gmail.com
           </SocialLink>
         </li>
@@ -71,17 +77,26 @@ import Layout from "../layouts/Layout.astro";
       <h2
         class="text-3xl md:text-5xl font-semibold mb-6 flex gap-x-3 items-center"
       >
-        <Bookmark class="size-8 md:size-12" />
+        <BookmarkIcon class="size-8 md:size-12" />
         Experiencia laboral
       </h2>
       <Timeline />
+    </Section>
+    <Section id="knowledge">
+      <h2
+        class="text-3xl md:text-5xl font-semibold mb-6 flex gap-x-3 items-center"
+      >
+        <SchoolIcon class="size-8 md:size-12" />
+        Conocimientos
+      </h2>
+      <Knowledge />
     </Section>
     <Section id="projects">
       <h2
         class="text-3xl md:text-5xl font-semibold mb-6 flex gap-x-3 items-center"
       >
-        <Code class="size-8 md:size-12" />
-        Proyectos
+        <CodeIcon class="size-8 md:size-12" />
+        Algunos proyectos
       </h2>
       <Projects />
     </Section>
@@ -89,7 +104,7 @@ import Layout from "../layouts/Layout.astro";
       <h2
         class="text-3xl md:text-5xl font-semibold mb-6 flex gap-x-3 items-center"
       >
-        <About class="size-8 md:size-12" />
+        <AboutIcon class="size-8 md:size-12" />
         Sobre mí
       </h2>
       <Aboutme />

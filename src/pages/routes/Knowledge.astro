@@ -1,0 +1,95 @@
+---
+/* Icons */
+import AngularIcon from "../../icons/Angular.astro";
+import AstroIcon from "../../icons/AstroIcon.astro";
+import CSSIcon from "../../icons/Css.astro";
+import JavaIcon from "../../icons/Java.astro";
+import JavasScriptIcon from "../../icons/JavaScript.astro";
+import MongoIcon from "../../icons/Mongo.astro";
+import NodeIcon from "../../icons/Node.astro";
+import ReactIcon from "../../icons/React.astro";
+import SpringIcon from "../../icons/Spring.astro";
+import SqlIcon from "../../icons/Sql.astro";
+import TypeScriptIcon from "../../icons/TypeScript.astro";
+import VisualIcon from "../../icons/Visual.astro";
+
+const knowledges = [
+  {
+    name: "React",
+    class: "bg-black text-white bg-gray-800 text-lg md:text-xl",
+    icon: ReactIcon,
+  },
+  {
+    name: "Angular",
+    class: "bg-red-400 text-white text-lg md:text-xl",
+    icon: AngularIcon,
+  },
+  {
+    name: "NodeJS",
+    class: "bg-green-400/70 text-white text-lg md:text-xl",
+    icon: NodeIcon,
+  },
+  {
+    name: "TypeScript",
+    class: "bg-blue-600/70 text-white text-lg md:text-xl",
+    icon: TypeScriptIcon,
+  },
+  {
+    name: "JavaScript",
+    class: "bg-black text-white bg-yellow-300/60 text-lg md:text-xl",
+    icon: JavasScriptIcon,
+  },
+  {
+    name: "Java",
+    class: "bg-orange-300/70 text-white text-lg md:text-xl",
+    icon: JavaIcon,
+  },
+  {
+    name: "CSS",
+    class: "bg-white text-white bg-sky-300/70 text-lg md:text-xl",
+    icon: CSSIcon,
+  },
+  {
+    name: "Mongo DB",
+    class: "bg-green-800/70 text-white text-lg md:text-xl",
+    icon: MongoIcon,
+  },
+  {
+    name: "Sql Server",
+    class: "bg-indigo-400/70 text-white text-lg md:text-xl",
+    icon: SqlIcon,
+  },
+  {
+    name: "Visual Basic",
+    class: "bg-violet-400/70 text-white text-lg md:text-xl",
+    icon: VisualIcon,
+  },
+  {
+    name: "Spring Boot",
+    class: "bg-green-300/40 text-white text-lg md:text-xl",
+    icon: SpringIcon,
+  },
+  {
+    name: "Astro",
+    class: "bg-indigo-700/70 text-white text-lg md:text-xl",
+    icon: AstroIcon,
+  },
+];
+---
+
+<div class="flex flex-wrap">
+  {
+    knowledges.map((tag) => (
+      <ul class="flex gap-x-2 flex-row mb-2 flex-wrap">
+        <li class="mb-5 m-2">
+          <span
+            class={`${tag.class} flex gap-x-2 rounded-full text-sm py-1 px-2`}
+          >
+            <tag.icon class="size-4 md:size-8" />
+            {tag.name}
+          </span>
+        </li>
+      </ul>
+    ))
+  }
+</div>
