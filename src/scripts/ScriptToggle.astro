@@ -1,0 +1,308 @@
+<script>
+  /* Set theme dark by default option */
+  window.localStorage.setItem("theme", "dark");
+  /* Click in darkmode and lightmode option */
+  const switchToggle = document.querySelector("#switch-toggle");
+  if (switchToggle) {
+    switchToggle.addEventListener("click", (el) => {
+      const theme = localStorage.getItem("theme");
+      if (theme === "dark") localStorage.setItem("theme", "light");
+      else localStorage.setItem("theme", "dark");
+      const selectedTheme = theme ? theme : "";
+      switchTheme(selectedTheme);
+      switchTextColor(selectedTheme);
+      switchSectionTop(selectedTheme);
+      switchSectionExperience(selectedTheme);
+      switchSectionProjects(selectedTheme);
+      swicthSectionAbout(selectedTheme);
+      swicthSectionContact(selectedTheme);
+      swicthFooter(selectedTheme);
+    });
+  }
+
+  /* Switch themes and icon option */
+  const switchTheme = (theme: string) => {
+    if (switchToggle && theme !== "") {
+      if (theme === "dark") {
+        switchToggle.classList.remove("bg-yellow-400", "-translate-x-2");
+        switchToggle.classList.add("bg-gray-700", "translate-x-full");
+        setTimeout(() => {
+          switchToggle.innerHTML = `
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+            </svg>`;
+        }, 250);
+      } else {
+        switchToggle.classList.add("bg-yellow-400", "-translate-x-2");
+        switchToggle.classList.remove("bg-gray-700", "translate-x-full");
+        setTimeout(() => {
+          switchToggle.innerHTML = `
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+            </svg>`;
+        }, 250);
+      }
+    }
+  };
+
+  /* Global elements */
+  const switchTextColor = (theme: string) => {
+    const themeBody = document.querySelector("#theme-body") as HTMLBodyElement;
+    if (theme === "dark") {
+      document.body.style.color = "black";
+      const data = document.querySelector("h1");
+      if (data) {
+        data.style.color = "black";
+      }
+      themeBody.classList.remove(
+        "bg-[radial-gradient(#ffffff33_1px,#00091d_1px)]",
+        "bg-[size:20px_20px]"
+      );
+      themeBody.classList.add(
+        "bg-white",
+        "bg-[radial-gradient(60%_120%_at_50%_50%,hsla(0,0%,100%,0)_0,rgba(252,205,238,.5)_100%)]"
+      );
+    } else {
+      document.body.style.color = "white";
+      const data = document.querySelector("h1");
+      if (data) {
+        data.style.color = "white";
+      }
+      themeBody.classList.remove(
+        "bg-white",
+        "bg-[radial-gradient(60%_120%_at_50%_50%,hsla(0,0%,100%,0)_0,rgba(252,205,238,.5)_100%)]"
+      );
+      themeBody.classList.add(
+        "bg-[radial-gradient(#ffffff33_1px,#00091d_1px)]",
+        "bg-[size:20px_20px]"
+      );
+    }
+  };
+
+  /* Section Top */
+  const switchSectionTop = (theme: string) => {
+    const top = document.querySelector("#top");
+    const information = document.querySelector("#information");
+    const address = document.querySelector("#address");
+    const list = top?.querySelectorAll("#social-link");
+    list?.forEach((el) => {
+      const svgGitHub = el.querySelector("#svg-github");
+      if (theme === "dark") {
+        svgGitHub?.classList.add("bg-black");
+        svgGitHub?.classList.remove("bg-transparent");
+        information?.classList.add("text-blue-900");
+        information?.classList.remove("text-yellow-200/90");
+        address?.classList.add("text-red-900/90");
+        address?.classList.remove("text-red-100/90");
+        el.classList.add(
+          "border-gray-600",
+          "hover:bg-black",
+          "hover:text-white"
+        );
+        el.classList.remove(
+          "border-white/10",
+          "hover:bg-white/10",
+          "hover:bg-white/10",
+          "hover:text-black"
+        );
+      } else {
+        svgGitHub?.classList.remove("bg-black");
+        svgGitHub?.classList.add("bg-transparent");
+        information?.classList.remove("text-blue-900");
+        information?.classList.add("text-yellow-200/90");
+        information?.classList.add("text-yellow-200/90");
+        address?.classList.remove("text-red-900/90");
+        el.classList.remove(
+          "border-gray-600",
+          "hover:bg-black",
+          "hover:text-white"
+        );
+        el.classList.add(
+          "border-white/10",
+          "hover:bg-white/10",
+          "hover:bg-white/10"
+        );
+      }
+    });
+  };
+
+  /* Section Experience */
+  const switchSectionExperience = (theme: string) => {
+    const experience = document.querySelector("#experience");
+    const rigthList = experience?.querySelector("ol");
+    const dot = experience?.querySelectorAll("#dot");
+    const list = experience?.querySelectorAll("li");
+    if (theme === "dark") {
+      rigthList?.classList.remove("border-gray-200");
+      rigthList?.classList.add("border-black");
+    } else {
+      rigthList?.classList.add("border-gray-200");
+      rigthList?.classList.remove("border-black");
+    }
+    dot?.forEach((el) => {
+      if (theme === "dark") {
+        el?.classList.add("border-black", "bg-black");
+        el?.classList.remove("bg-gray-200");
+      } else {
+        el?.classList.remove("border-black", "bg-black");
+        el?.classList.add("bg-gray-200");
+      }
+    });
+    list?.forEach((el) => {
+      const title = el.querySelector("h3");
+      const time = el.querySelector("time");
+      const text = el.querySelector("#project");
+      const description = el.querySelector("#description");
+      const button = el.querySelector("a");
+      if (theme === "dark") {
+        time?.classList.remove("text-sky-100/90");
+        time?.classList.add("text-gray-700");
+        title?.classList.remove("text-yellow-100");
+        title?.classList.add("text-blue-900");
+        text?.classList.remove("text-yellow-100");
+        text?.classList.add("text-blue-700");
+        description?.classList.remove("text-gray-200");
+        description?.classList.add("text-gray-900");
+        button?.classList.remove("bg-white", "text-gray-900");
+        button?.classList.add("bg-blue-600/40", "text-gray-700");
+      } else {
+        time?.classList.add("text-sky-100/90");
+        time?.classList.remove("text-gray-700");
+        title?.classList.add("text-yellow-100");
+        title?.classList.remove("text-blue-900");
+        text?.classList.add("text-yellow-100");
+        text?.classList.remove("text-blue-700");
+        description?.classList.add("text-gray-200");
+        description?.classList.remove("text-gray-900");
+        button?.classList.add("bg-white", "text-gray-900");
+        button?.classList.remove("bg-blue-600/40", "text-gray-700");
+      }
+    });
+  };
+  /* Section Projects */
+  const switchSectionProjects = (theme: string) => {
+    const projects = document.querySelector("#projects");
+    const articles = projects?.querySelectorAll("article");
+    articles?.forEach((el) => {
+      const title = el?.querySelector("h3");
+      const list = el.querySelector("#list-link");
+      const link = list?.querySelectorAll("a");
+      if (theme === "dark") {
+        title?.classList.remove("text-yellow-100");
+        title?.classList.add("text-blue-700");
+      } else {
+        title?.classList.add("text-yellow-100");
+        title?.classList.remove("text-blue-700");
+      }
+      link?.forEach((el) => {
+        if (theme === "dark") {
+          el?.classList.add(
+            "border-gray-600",
+            "hover:bg-black",
+            "hover:text-white"
+          );
+          el?.classList.remove(
+            "border-white/10",
+            "hover:bg-white/10",
+            "hover:bg-white/10",
+            "hover:text-black"
+          );
+        } else {
+          el?.classList.remove(
+            "border-gray-600",
+            "hover:bg-black",
+            "hover:text-white"
+          );
+          el?.classList.add(
+            "border-white/10",
+            "hover:bg-white/10",
+            "hover:bg-white/10"
+          );
+        }
+        const svg = el.querySelector("#svg-github");
+        if (svg !== null) {
+          if (theme === "dark") {
+            svg?.classList.remove("bg-white");
+            svg?.classList.add("bg-gray-900");
+          } else {
+            svg?.classList.add("bg-white");
+            svg?.classList.remove("bg-dark");
+          }
+        }
+      });
+    });
+  };
+
+  /* Section About */
+  const swicthSectionAbout = (theme: string) => {
+    const about = document.querySelector("#about");
+    const name = about?.querySelector("h3");
+    if (theme === "dark") {
+      name?.classList.remove("text-yellow-100");
+      name?.classList.add("text-blue-700");
+    } else {
+      name?.classList.add("text-yellow-100");
+      name?.classList.remove("text-blue-700");
+    }
+  };
+
+  /* Section Contact */
+  const swicthSectionContact = (theme: string) => {
+    const contact = document.querySelector("#contact");
+    const title = contact?.querySelector("h3");
+    const list = contact?.querySelectorAll("#social-link");
+    if (theme === "dark") {
+      title?.classList.remove("text-yellow-100");
+      title?.classList.add("text-blue-700");
+    } else {
+      title?.classList.add("text-yellow-100");
+      title?.classList.remove("text-blue-700");
+    }
+    list?.forEach((el) => {
+      if (theme === "dark") {
+        el?.classList.add(
+          "border-gray-600",
+          "hover:bg-black",
+          "hover:text-white"
+        );
+        el?.classList.remove(
+          "border-white/10",
+          "hover:bg-white/10",
+          "hover:bg-white/10",
+          "hover:text-black"
+        );
+      } else {
+        el.classList.remove(
+          "border-gray-600",
+          "hover:bg-black",
+          "hover:text-white"
+        );
+        el.classList.add(
+          "border-white/10",
+          "hover:bg-white/10",
+          "hover:bg-white/10"
+        );
+      }
+    });
+  };
+  const swicthFooter = (theme: string) => {
+    const footer = document.querySelector("footer");
+    const list = footer?.querySelector("ul");
+    const span = footer?.querySelector("span");
+    if (theme === "dark") {
+      footer?.classList.remove("bg-black/20");
+      footer?.classList.add("bg-gray-700/10");
+      list?.classList.remove("text-white/90");
+      list?.classList.add("text-gray-700");
+      span?.classList.remove("text-yellow-100/90");
+      span?.classList.add("text-black/90");
+    } else {
+      footer?.classList.add("bg-black/20");
+      footer?.classList.remove("bg-gray-700/10");
+      list?.classList.add("text-white/90");
+      list?.classList.remove("text-gray-700");
+      span?.classList.add("text-yellow-100/90");
+      span?.classList.remove("text-black/90");
+    }
+  };
+</script>

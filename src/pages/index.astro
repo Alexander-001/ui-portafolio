@@ -3,6 +3,7 @@
 import Badge from "../components/Badge.astro";
 import Section from "../components/Section.astro";
 import SocialLink from "../components/SocialLink.astro";
+import ThemeToggle from "../components/ThemeToggle.astro";
 /* Icons */
 import AboutIcon from "../icons/About.astro";
 import BookmarkIcon from "../icons/Bookmark.astro";
@@ -12,8 +13,8 @@ import GithubIcon from "../icons/Github.astro";
 import GmailIcon from "../icons/Gmail.astro";
 import LinkedInIcon from "../icons/LinkedIn.astro";
 import SchoolIcon from "../icons/School.astro";
-/* Layout */
 import Layout from "../layouts/Layout.astro";
+/* Layout */
 /* Routes */
 import Aboutme from "./routes/Aboutme.astro";
 import Contact from "./routes/Contact.astro";
@@ -27,7 +28,10 @@ import Projects from "./routes/Projects.astro";
   description="Analista Programador con experiencia en proyectos importantes."
 >
   <main class="px-4">
-    <Section class="py-44 pb-32">
+    <Section>
+      <ThemeToggle />
+    </Section>
+    <Section class="py-22 md:py-44 pb-32" id="top">
       <img
         class="rounded-full size-16 mb-4"
         src="./profile.jpeg"
@@ -40,15 +44,21 @@ import Projects from "./routes/Projects.astro";
         <a
           href="https://cl.linkedin.com/in/alexander-ortiz-cortes-07843a16b"
           target="_blank"
-          class="flex justify-center items-center"
+          rel="noopener"
+          class="flex items-center transition md:justify-center md:hover:scale-105"
           ><Badge>Disponible para trabajar</Badge></a
         >
       </h1>
       <h2 class="text-xl md:text-3xl opacity-80 text-wrap mb-10 md:mb-0">
-        <span>+ 5 años de experiencia.</span><span class="text-yellow-200/90">
+        <span>+ 5 años de experiencia.</span><span
+          class="text-yellow-200/90"
+          id="information"
+        >
           Desarrollador Full Stack y Mobile.</span
-        ><span class="text-red-100/90"> De Santiago, Chile 🇨🇱.</span> Soy un apasionado
-        por la tecnología, comprometido a realizar aplicaciones únicas.
+        ><span class="text-red-100/90" id="address">
+          De Santiago, Chile 🇨🇱.</span
+        > Soy un apasionado por la tecnología, comprometido a realizar aplicaciones
+        únicas.
       </h2>
       <ul class="flex gap-x-2 mt-4 flex-wrap">
         <li class="mb-5">

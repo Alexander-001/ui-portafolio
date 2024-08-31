@@ -11,6 +11,7 @@ const { title, project, description, link, messageLink, date } = Astro.props;
 ---
 
 <div
+  id="dot"
   class="absolute size-3 bg-gray-200 rounded-full mt-1.5 -start-1.5 border border-white dark:border-gray-900 dark:bg-gray-700"
 >
 </div>
@@ -20,10 +21,13 @@ const { title, project, description, link, messageLink, date } = Astro.props;
 <h3 class="text-lg md:text-3xl font-semibold text-yellow-100 mt-2">
   {title}
 </h3>
-<p class="mb-2 text-lg md:text-2xl font-normal text-yellow-100">
+<p class="mb-2 text-lg md:text-2xl font-normal text-yellow-100" id="project">
   {project}
 </p>
-<p class="mb-4 text-lg md:text-2xl font-normal text-gray-200 text-pretty">
+<p
+  class="mb-4 text-lg md:text-2xl font-normal text-gray-200 text-pretty"
+  id="description"
+>
   {description}
 </p>
 {

@@ -20,17 +20,17 @@ const tagsColor = {
   },
   css: {
     name: "CSS",
-    class: "bg-white text-white bg-blue-900 text-lg md:text-xl",
+    class: "text-white bg-blue-900 text-lg md:text-xl",
     icon: CSSIcon,
   },
   javascript: {
     name: "JavaScript",
-    class: "bg-black text-white bg-yellow-300/60 text-lg md:text-xl",
+    class: "bg-black text-white bg-yellow-500/60 text-lg md:text-xl",
     icon: JavasScriptIcon,
   },
   typescript: {
     name: "TypeScript",
-    class: "bg-blue-600/70 text-white text-lg md:text-xl",
+    class: "bg-blue-400/70 text-white text-lg md:text-xl",
     icon: TypeScriptIcon,
   },
   angular: {
@@ -59,7 +59,7 @@ const projects = [
     frontGithub: "",
     backGithub: "",
     image: "/autoconsulta.png",
-    tags: [tagsColor.react, tagsColor.css, tagsColor.typescript],
+    tags: [tagsColor.react, tagsColor.typescript, tagsColor.css],
   },
   {
     title: "Tablero Basket",
@@ -121,16 +121,16 @@ const projects = [
           alt={`Captura de pantalla del proyecto ${image}`}
         />
         {link && frontGithub && backGithub && (
-          <ul class="flex gap-x-2 mt-6 flex-wrap">
+          <ul class="flex gap-x-2 mt-6 flex-wrap" id="list-link">
             <li>
               <SocialLink href={frontGithub}>
-                <GithubIcon class="size-6" />
+                <GithubIcon class="size-6" id="svg-github" />
                 FrontEnd Github
               </SocialLink>
             </li>
             <li>
               <SocialLink href={backGithub}>
-                <GithubIcon class="size-6" />
+                <GithubIcon class="size-6" id="svg-github" />
                 Backend Github
               </SocialLink>
             </li>
