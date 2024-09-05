@@ -1,24 +1,50 @@
 <script>
   /* Set theme dark by default option */
   window.localStorage.setItem("theme", "dark");
+  let isScrolling: boolean = true;
   /* Click in darkmode and lightmode option */
-  const switchToggle = document.querySelector("#switch-toggle");
-  if (switchToggle) {
-    switchToggle.addEventListener("click", (el) => {
-      const theme = localStorage.getItem("theme");
-      if (theme === "dark") localStorage.setItem("theme", "light");
-      else localStorage.setItem("theme", "dark");
-      const selectedTheme = theme ? theme : "";
-      switchTheme(selectedTheme);
-      switchTextColor(selectedTheme);
-      switchSectionTop(selectedTheme);
-      switchSectionExperience(selectedTheme);
-      switchSectionProjects(selectedTheme);
-      swicthSectionAbout(selectedTheme);
-      swicthSectionContact(selectedTheme);
-      swicthFooter(selectedTheme);
-    });
-  }
+  const switchToggle = document.querySelector(
+    "#switch-toggle"
+  ) as HTMLDivElement;
+  switchToggle.addEventListener("click", () => {
+    const theme = localStorage.getItem("theme");
+    if (theme === "dark") localStorage.setItem("theme", "light");
+    else localStorage.setItem("theme", "dark");
+    const selectedTheme = theme ? theme : "";
+    if (isScrolling) swichHeader(selectedTheme);
+    switchTheme(selectedTheme);
+    switchTextColor(selectedTheme);
+    switchSectionTop(selectedTheme);
+    switchSectionExperience(selectedTheme);
+    switchSectionProjects(selectedTheme);
+    swicthSectionAbout(selectedTheme);
+    swicthSectionContact(selectedTheme);
+    swicthFooter(selectedTheme);
+  });
+
+  /* Header */
+  window.addEventListener("scroll", () => {
+    const ejeY = window.scrollY;
+    if (ejeY === 0) isScrolling = false;
+    else isScrolling = true;
+    const theme = localStorage.getItem("theme");
+    const nav = document.querySelector("#nav") as HTMLDivElement;
+    if (ejeY > 0 && theme === "light") {
+      nav.classList.add("text-gray-100");
+    }
+    if (ejeY === 0 && theme === "light") {
+      nav.classList.remove("text-gray-100");
+    }
+  });
+
+  const swichHeader = (theme: string) => {
+    const nav = document.querySelector("#nav") as HTMLDivElement;
+    if (theme === "dark") {
+      nav.classList.add("text-gray-100");
+    } else {
+      nav.classList.remove("text-gray-100");
+    }
+  };
 
   /* Switch themes and icon option */
   const switchTheme = (theme: string) => {

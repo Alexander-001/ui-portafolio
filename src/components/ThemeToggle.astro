@@ -2,13 +2,16 @@
 import ScriptToggle from "../scripts/ScriptToggle.astro";
 ---
 
-<div class="w-full flex justify-end mt-10">
+<div
+  class="z-50 right-5 flex fixed justify-end mt-[100px] md:mt-[22px]"
+  id="toggle"
+>
   <button
-    class="mr-2 w-20 md:w-28 h-8 md:h-12 rounded-full bg-white flex items-center transition duration-300 focus:outline-none shadow"
+    class="mr-2 w-20 h-8 rounded-full bg-white flex items-center transition duration-300 focus:outline-none shadow"
   >
     <div
       id="switch-toggle"
-      class="size-10 md:size-14 relative rounded-full transition duration-500 transform bg-yellow-400 -translate-x-2 p-1 text-white"
+      class="size-10 relative rounded-full transition duration-500 transform bg-yellow-400 -translate-x-2 p-1 text-white"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"

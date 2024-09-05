@@ -1,12 +1,20 @@
+---
+import ScriptScrolling from "../scripts/ScriptScrolling.astro";
+import ThemeToggle from "./ThemeToggle.astro";
+---
+
 <header
-  class="flex justify-center items-center py-5 w-full xl:w-[1120px] mx-auto"
+  id="header"
+  class="fixed top-0 left-0 z-10 flex justify-center items-center py-5 w-full xl:w-[1120px] mx-auto"
 >
   <nav
-    class="flex flex-row flex-wrap gap-x-5 md:gap-x-10 opacity-80 text-sm sm:text-2xl justify-center items-center"
+    id="nav"
+    class="ease-out flex flex-row flex-wrap gap-x-5 md:gap-x-10 justify-center items-center"
   >
     <a
       href="#top"
-      class="transition hover:text-blue-500 dark:hover:text-blue-500">Inicio</a
+      class="transition hover:text-blue-500 dark:hover:text-blue-500 text-md pl-5"
+      >Inicio</a
     >
     <a
       href="#experience"
@@ -30,8 +38,11 @@
     >
     <a
       href="#contact"
-      class="mt-5 lg:mt-0 transition hover:text-blue-500 dark:hover:text-blue-500"
+      class="transition hover:text-blue-500 dark:hover:text-blue-500 pr-5"
       >Contacto</a
     >
   </nav>
 </header>
+
+<ThemeToggle />
+<ScriptScrolling />
