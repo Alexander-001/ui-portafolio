@@ -5,7 +5,7 @@ import ThemeToggle from "./ThemeToggle.astro";
 
 <header
   id="header"
-  class="fixed top-0 left-0 z-10 flex justify-center items-center py-5 w-full xl:w-[1120px] mx-auto"
+  class="fixed top-0 left-0 z-10 flex justify-center items-center py-5 w-full mx-auto"
 >
   <nav
     id="nav"
@@ -13,32 +13,32 @@ import ThemeToggle from "./ThemeToggle.astro";
   >
     <a
       href="#top"
-      class="transition hover:text-blue-500 dark:hover:text-blue-500 text-md pl-5"
+      class="nav-link transition hover:text-blue-500 dark:hover:text-blue-500 text-md pl-5"
       >Inicio</a
     >
     <a
       href="#experience"
-      class="transition hover:text-blue-500 dark:hover:text-blue-500"
+      class="nav-link transition hover:text-blue-500 dark:hover:text-blue-500"
       >Experiencia</a
     >
     <a
-      href="#projects"
-      class="transition hover:text-blue-500 dark:hover:text-blue-500"
+      href="#project"
+      class="nav-link transition hover:text-blue-500 dark:hover:text-blue-500"
       >Proyectos</a
     >
     <a
       href="#knowledge"
-      class="transition hover:text-blue-500 dark:hover:text-blue-500"
+      class="nav-link transition hover:text-blue-500 dark:hover:text-blue-500"
       >Conocimientos</a
     >
     <a
       href="#about"
-      class="transition hover:text-blue-500 dark:hover:text-blue-500"
+      class="nav-link transition hover:text-blue-500 dark:hover:text-blue-500"
       >Sobre mi</a
     >
     <a
       href="#contact"
-      class="transition hover:text-blue-500 dark:hover:text-blue-500 pr-5"
+      class="nav-link transition hover:text-blue-500 dark:hover:text-blue-500 pr-5"
       >Contacto</a
     >
   </nav>
@@ -46,3 +46,33 @@ import ThemeToggle from "./ThemeToggle.astro";
 
 <ThemeToggle />
 <ScriptScrolling />
+
+<script>
+  const sections = document.querySelectorAll("section[id]");
+  console.log(sections);
+  const navLinks = document.querySelectorAll(".nav-link");
+
+  const observerOptions = {
+    root: null,
+    rootMargin: "0px",
+    threshold: 0.3,
+  };
+
+  const observerCallback = (entries: any[]) => {
+    entries.forEach((entry: any) => {
+      const navLink = document.querySelector(
+        `a[href="#${entry.target.id}"]`
+      ) as any;
+      console.log(`navLink.href: ${navLink.href}, navLink: ${navLink}`);
+      if (entry.isIntersecting) {
+        navLink.classList.add("text-blue-500", "font-bold");
+      } else {
+        navLink.classList.remove("text-blue-500", "font-bold");
+      }
+    });
+  };
+
+  const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+  sections.forEach((section) => observer.observe(section));
+</script>

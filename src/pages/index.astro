@@ -34,17 +34,20 @@ import Projects from "./routes/Projects.astro";
         alt="Avatar logo"
       />
       <h1
-        class="text-white mt-2 md:mt-0 text-xl sm:text-3xl md:text-5xl font-bold flex flex-row gap-x-4 pb-5 md:pb-10 items-center flex-wrap md:flex-nowrap"
+        class="typewriter text-white mt-2 md:mt-0 text-xl sm:text-3xl md:text-5xl font-bold flex flex-row gap-x-4 pb-5 items-center flex-wrap md:flex-nowrap"
       >
         Hola! Soy Alexander
+      </h1>
+      <div class="mt-4 mb-5 ml-2">
         <a
           href="https://cl.linkedin.com/in/alexander-ortiz-cortes-07843a16b"
           target="_blank"
           rel="noopener"
-          class="flex items-center transition md:justify-center md:hover:scale-105 mt-5 md:mt-0"
-          ><Badge>Disponible para trabajar</Badge></a
+          class="flex items-center transition md:justify-start md:hover:scale-105"
         >
-      </h1>
+          <Badge>Disponible para trabajar</Badge>
+        </a>
+      </div>
       <h2 class="text-xl md:text-3xl opacity-80 text-wrap mb-10 md:mb-0">
         <span>+ 5 años de experiencia.</span><span
           class="text-yellow-200/90"
@@ -88,7 +91,7 @@ import Projects from "./routes/Projects.astro";
       </h2>
       <Timeline />
     </Section>
-    <Section id="projects">
+    <Section id="project">
       <h2
         class="text-3xl md:text-5xl font-semibold mb-6 flex gap-x-3 items-center"
       >
@@ -126,3 +129,36 @@ import Projects from "./routes/Projects.astro";
     </Section>
   </main>
 </Layout>
+
+<style>
+  .typewriter {
+    overflow: hidden;
+    border-right: 0.15em solid rgb(240, 255, 167);
+    white-space: nowrap;
+    animation:
+      typing 5s steps(40, end) infinite,
+      blink-caret 0.75s step-end infinite;
+  }
+
+  @keyframes typing {
+    0% {
+      width: 0;
+    }
+    50% {
+      width: 70%;
+    }
+    100% {
+      width: 0;
+    }
+  }
+
+  @keyframes blink-caret {
+    from,
+    to {
+      border-color: transparent;
+    }
+    50% {
+      border-color: rgb(240, 255, 167);
+    }
+  }
+</style>
