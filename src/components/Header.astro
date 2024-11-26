@@ -22,7 +22,7 @@ import ThemeToggle from "./ThemeToggle.astro";
       >Experiencia</a
     >
     <a
-      href="#project"
+      href="#projects"
       class="nav-link text-white transition hover:text-blue-500 dark:hover:text-blue-500"
       >Proyectos</a
     >
@@ -49,9 +49,6 @@ import ThemeToggle from "./ThemeToggle.astro";
 
 <script>
   const sections = document.querySelectorAll("section[id]");
-  console.log(sections);
-  const navLinks = document.querySelectorAll(".nav-link");
-
   const observerOptions = {
     root: null,
     rootMargin: "0px",
@@ -63,11 +60,15 @@ import ThemeToggle from "./ThemeToggle.astro";
       const navLink = document.querySelector(
         `a[href="#${entry.target.id}"]`
       ) as any;
-      console.log(`navLink.href: ${navLink.href}, navLink: ${navLink}`);
       if (entry.isIntersecting) {
-        navLink.classList.add("text-blue-500", "font-bold");
+        navLink.classList.add("text-blue-500", "font-extrabold");
       } else {
-        navLink.classList.remove("text-blue-500", "font-bold");
+        navLink.classList.remove(
+          "text-blue-500",
+          "font-extrabold",
+          "text-white",
+          "text-blue-700"
+        );
       }
     });
   };

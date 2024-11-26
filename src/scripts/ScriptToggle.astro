@@ -1,7 +1,6 @@
 <script>
   /* Set theme dark by default option */
   window.localStorage.setItem("theme", "dark");
-  let isScrolling: boolean = true;
   /* Click in darkmode and lightmode option */
   const switchToggle = document.querySelector(
     "#switch-toggle"
@@ -11,9 +10,9 @@
     if (theme === "dark") localStorage.setItem("theme", "light");
     else localStorage.setItem("theme", "dark");
     const selectedTheme = theme ? theme : "";
-    if (isScrolling) swichHeader(selectedTheme);
     switchTheme(selectedTheme);
     switchTextColor(selectedTheme);
+    switchHeader(selectedTheme);
     switchSectionTop(selectedTheme);
     switchSectionExperience(selectedTheme);
     switchSectionProjects(selectedTheme);
@@ -22,30 +21,6 @@
     swicthSectionContact(selectedTheme);
     swicthFooter(selectedTheme);
   });
-
-  /* Header */
-  window.addEventListener("scroll", () => {
-    const ejeY = window.scrollY;
-    if (ejeY === 0) isScrolling = false;
-    else isScrolling = true;
-    const theme = localStorage.getItem("theme");
-    const nav = document.querySelector("#nav") as HTMLDivElement;
-    if (ejeY > 0 && theme === "light") {
-      nav.classList.add("text-gray-100");
-    }
-    if (ejeY === 0 && theme === "light") {
-      nav.classList.remove("text-gray-100");
-    }
-  });
-
-  const swichHeader = (theme: string) => {
-    const nav = document.querySelector("#nav") as HTMLDivElement;
-    if (theme === "dark") {
-      nav.classList.add("text-gray-100");
-    } else {
-      nav.classList.remove("text-gray-100");
-    }
-  };
 
   /* Switch themes and icon option */
   const switchTheme = (theme: string) => {
@@ -75,13 +50,7 @@
   /* Global elements */
   const switchTextColor = (theme: string) => {
     const themeBody = document.querySelector("#theme-body") as HTMLBodyElement;
-    const header = themeBody.querySelector("header");
-    const links = header?.querySelectorAll("a");
     if (theme === "dark") {
-      links?.forEach((el) => {
-        el.classList.remove("text-white");
-        el.classList.add("text-black");
-      });
       document.body.style.color = "black";
       const title = document.querySelector("h1");
       if (title) {
@@ -96,10 +65,6 @@
         "bg-[radial-gradient(60%_120%_at_50%_50%,hsla(0,0%,100%,0)_0,rgba(252,205,238,.5)_100%)]"
       );
     } else {
-      links?.forEach((el) => {
-        el.classList.add("text-white");
-        el.classList.remove("text-black");
-      });
       document.body.style.color = "white";
       const data = document.querySelector("h1");
       if (data) {
@@ -114,6 +79,21 @@
         "bg-[size:20px_20px]"
       );
     }
+  };
+
+  /* Header */
+  const switchHeader = (theme: string) => {
+    const header = document.querySelector("#header");
+    const links = header?.querySelectorAll("a");
+    links?.forEach((el) => {
+      if (theme === "dark") {
+        el.classList.remove("text-white");
+        el.classList.add("text-blue-700");
+      } else {
+        el.classList.add("text-white");
+        el.classList.remove("text-blue-700");
+      }
+    });
   };
 
   /* Section Top */
@@ -143,6 +123,7 @@
         address?.classList.remove("text-red-100/90");
         links?.forEach((el) => {
           el.classList.add("text-black");
+          el.classList.remove("text-white");
         });
         el.classList.add(
           "border-gray-600",
@@ -170,6 +151,7 @@
         address?.classList.remove("text-red-900/90");
         links?.forEach((el) => {
           el.classList.remove("text-black");
+          el.classList.add("text-white");
         });
         el.classList.remove(
           "border-gray-600",
@@ -407,7 +389,6 @@
       svg?.classList.add("text-white");
     }
     list?.forEach((el) => {
-      console.log(el);
       if (theme === "dark") {
         el?.classList.add(
           "border-gray-600",
@@ -448,7 +429,7 @@
       list?.classList.remove("text-white/90");
       list?.classList.add("text-gray-700");
       span?.classList.remove("text-yellow-100/90");
-      span?.classList.add("text-blue-700");
+      span?.classList.add("text-black");
     } else {
       footer?.classList.add("bg-black/20");
       footer?.classList.remove("bg-gray-700/10");
