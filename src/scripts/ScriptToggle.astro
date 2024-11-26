@@ -17,6 +17,7 @@
     switchSectionTop(selectedTheme);
     switchSectionExperience(selectedTheme);
     switchSectionProjects(selectedTheme);
+    swicthKnowledgeAbout(selectedTheme);
     swicthSectionAbout(selectedTheme);
     swicthSectionContact(selectedTheme);
     swicthFooter(selectedTheme);
@@ -74,11 +75,17 @@
   /* Global elements */
   const switchTextColor = (theme: string) => {
     const themeBody = document.querySelector("#theme-body") as HTMLBodyElement;
+    const header = themeBody.querySelector("header");
+    const links = header?.querySelectorAll("a");
     if (theme === "dark") {
+      links?.forEach((el) => {
+        el.classList.remove("text-white");
+        el.classList.add("text-black");
+      });
       document.body.style.color = "black";
-      const data = document.querySelector("h1");
-      if (data) {
-        data.style.color = "black";
+      const title = document.querySelector("h1");
+      if (title) {
+        title.style.color = "black";
       }
       themeBody.classList.remove(
         "bg-[radial-gradient(#ffffff33_1px,#00091d_1px)]",
@@ -89,6 +96,10 @@
         "bg-[radial-gradient(60%_120%_at_50%_50%,hsla(0,0%,100%,0)_0,rgba(252,205,238,.5)_100%)]"
       );
     } else {
+      links?.forEach((el) => {
+        el.classList.add("text-white");
+        el.classList.remove("text-black");
+      });
       document.body.style.color = "white";
       const data = document.querySelector("h1");
       if (data) {
@@ -108,18 +119,31 @@
   /* Section Top */
   const switchSectionTop = (theme: string) => {
     const top = document.querySelector("#top");
+    const subtitle = top?.querySelector("h2");
     const information = document.querySelector("#information");
+    const links = top?.querySelectorAll("#social-links a");
     const address = document.querySelector("#address");
     const list = top?.querySelectorAll("#social-link");
     list?.forEach((el) => {
       const svgGitHub = el.querySelector("#svg-github");
+      const svgLinkedin = el.querySelector("#svg-linkedin");
+      const svgEmail = el.querySelector("#svg-email");
       if (theme === "dark") {
         svgGitHub?.classList.add("bg-black");
         svgGitHub?.classList.remove("bg-transparent");
+        svgLinkedin?.classList.add("text-black");
+        svgLinkedin?.classList.remove("text-white");
+        svgEmail?.classList.add("text-black");
+        svgEmail?.classList.remove("text-white");
+        subtitle?.classList.add("text-black");
+        subtitle?.classList.remove("text-white");
         information?.classList.add("text-blue-900");
         information?.classList.remove("text-yellow-200/90");
         address?.classList.add("text-red-900/90");
         address?.classList.remove("text-red-100/90");
+        links?.forEach((el) => {
+          el.classList.add("text-black");
+        });
         el.classList.add(
           "border-gray-600",
           "hover:bg-black",
@@ -134,10 +158,19 @@
       } else {
         svgGitHub?.classList.remove("bg-black");
         svgGitHub?.classList.add("bg-transparent");
+        svgLinkedin?.classList.add("text-white");
+        svgLinkedin?.classList.remove("text-black");
+        svgEmail?.classList.add("text-white");
+        svgEmail?.classList.remove("text-black");
+        subtitle?.classList.remove("text-black");
+        subtitle?.classList.add("text-white");
         information?.classList.remove("text-blue-900");
         information?.classList.add("text-yellow-200/90");
         information?.classList.add("text-yellow-200/90");
         address?.classList.remove("text-red-900/90");
+        links?.forEach((el) => {
+          el.classList.remove("text-black");
+        });
         el.classList.remove(
           "border-gray-600",
           "hover:bg-black",
@@ -155,6 +188,8 @@
   /* Section Experience */
   const switchSectionExperience = (theme: string) => {
     const experience = document.querySelector("#experience");
+    const subtitle = experience?.querySelector("h2");
+    const svg = experience?.querySelector("svg");
     const rigthList = experience?.querySelector("ol");
     const dot = experience?.querySelectorAll("#dot");
     const list = experience?.querySelectorAll("li");
@@ -185,6 +220,10 @@
         time?.classList.add("text-gray-700");
         title?.classList.remove("text-yellow-100");
         title?.classList.add("text-blue-900");
+        subtitle?.classList.add("text-black");
+        subtitle?.classList.remove("text-white");
+        svg?.classList.add("text-black");
+        svg?.classList.remove("text-white");
         text?.classList.remove("text-yellow-100");
         text?.classList.add("text-blue-700");
         description?.classList.remove("text-gray-200");
@@ -196,6 +235,10 @@
         time?.classList.remove("text-gray-700");
         title?.classList.add("text-yellow-100");
         title?.classList.remove("text-blue-900");
+        subtitle?.classList.remove("text-black");
+        subtitle?.classList.add("text-white");
+        svg?.classList.remove("text-black");
+        svg?.classList.add("text-white");
         text?.classList.add("text-yellow-100");
         text?.classList.remove("text-blue-700");
         description?.classList.add("text-gray-200");
@@ -209,104 +252,188 @@
   const switchSectionProjects = (theme: string) => {
     const projects = document.querySelector("#projects");
     const articles = projects?.querySelectorAll("article");
+    const titleTop = projects?.querySelector("h2");
+    const svg = projects?.querySelector("svg");
     articles?.forEach((el) => {
       const title = el?.querySelector("h3");
+      const subtitle = el?.querySelector("h2");
+      const text = el?.querySelector("p");
       const list = el.querySelector("#list-link");
       const link = list?.querySelectorAll("a");
       if (theme === "dark") {
         title?.classList.remove("text-yellow-100");
         title?.classList.add("text-blue-700");
+        titleTop?.classList.add("text-black");
+        titleTop?.classList.remove("text-white");
+        subtitle?.classList.add("text-black");
+        subtitle?.classList.remove("text-white");
+        svg?.classList.add("text-black");
+        svg?.classList.remove("text-white");
+        text?.classList.add("text-black");
+        text?.classList.remove("text-white");
       } else {
         title?.classList.add("text-yellow-100");
         title?.classList.remove("text-blue-700");
+        titleTop?.classList.remove("text-black");
+        titleTop?.classList.add("text-white");
+        subtitle?.classList.remove("text-black");
+        subtitle?.classList.add("text-white");
+        svg?.classList.remove("text-black");
+        svg?.classList.add("text-white");
+        text?.classList.remove("text-black");
+        text?.classList.add("text-white");
       }
       link?.forEach((el) => {
         if (theme === "dark") {
           el?.classList.add(
             "border-gray-600",
             "hover:bg-black",
-            "hover:text-white"
+            "hover:text-white",
+            "text-black"
           );
           el?.classList.remove(
             "border-white/10",
             "hover:bg-white/10",
             "hover:bg-white/10",
-            "hover:text-black"
+            "hover:text-black",
+            "text-white"
           );
         } else {
           el?.classList.remove(
             "border-gray-600",
             "hover:bg-black",
-            "hover:text-white"
+            "hover:text-white",
+            "text-black"
           );
           el?.classList.add(
             "border-white/10",
             "hover:bg-white/10",
-            "hover:bg-white/10"
+            "hover:bg-white/10",
+            "text-white"
           );
         }
         const svg = el.querySelector("#svg-github");
+        const svgdirection = el.querySelector("#svg-direction");
         if (svg !== null) {
           if (theme === "dark") {
-            svg?.classList.remove("bg-white");
-            svg?.classList.add("bg-gray-900");
+            svg?.classList.remove("text-white");
+            svg?.classList.add("text-black", "bg-black");
           } else {
-            svg?.classList.add("bg-white");
-            svg?.classList.remove("bg-dark");
+            svg?.classList.add("text-white");
+            svg?.classList.remove("text-black", "bg-black");
+          }
+        }
+        if (svgdirection !== null) {
+          if (theme === "dark") {
+            svgdirection?.classList.remove("text-white");
+            svgdirection?.classList.add("text-black");
+          } else {
+            svgdirection?.classList.add("text-white");
+            svgdirection?.classList.remove("text-black");
           }
         }
       });
     });
   };
 
+  /* Section Knowledge */
+  const swicthKnowledgeAbout = (theme: string) => {
+    const knowledge = document.querySelector("#knowledge");
+    const svg = knowledge?.querySelector("svg");
+    const name = knowledge?.querySelector("h2");
+    if (theme === "dark") {
+      svg?.classList.add("text-black");
+      svg?.classList.remove("text-white");
+      name?.classList.remove("text-white");
+      name?.classList.add("text-black");
+    } else {
+      svg?.classList.remove("text-black");
+      svg?.classList.add("text-white");
+      name?.classList.add("text-white");
+      name?.classList.remove("text-black");
+    }
+  };
+
   /* Section About */
   const swicthSectionAbout = (theme: string) => {
     const about = document.querySelector("#about");
-    const name = about?.querySelector("h3");
+    const name = about?.querySelector("h2");
+    const svg = about?.querySelector("svg");
+    const article = about?.querySelector("article");
+    const title = article?.querySelector("h3");
+    const text = article?.querySelector("p");
+
     if (theme === "dark") {
-      name?.classList.remove("text-yellow-100");
-      name?.classList.add("text-blue-700");
+      name?.classList.remove("text-white");
+      name?.classList.add("text-black");
+      svg?.classList.add("text-black");
+      svg?.classList.remove("text-white");
+      title?.classList.add("text-blue-700");
+      title?.classList.remove("text-yellow-100");
+      text?.classList.remove("text-white");
+      text?.classList.add("text-black");
     } else {
-      name?.classList.add("text-yellow-100");
-      name?.classList.remove("text-blue-700");
+      name?.classList.add("text-white");
+      name?.classList.remove("text-black");
+      svg?.classList.remove("text-black");
+      svg?.classList.add("text-white");
+      title?.classList.remove("text-blue-700");
+      title?.classList.add("text-yellow-100");
+      text?.classList.add("text-white");
+      text?.classList.remove("text-black");
     }
   };
 
   /* Section Contact */
   const swicthSectionContact = (theme: string) => {
     const contact = document.querySelector("#contact");
-    const title = contact?.querySelector("h3");
+    const title = contact?.querySelector("h2");
+    const subtitle = contact?.querySelector("h3");
+    const svg = contact?.querySelector("svg");
     const list = contact?.querySelectorAll("#social-link");
     if (theme === "dark") {
-      title?.classList.remove("text-yellow-100");
-      title?.classList.add("text-blue-700");
+      title?.classList.remove("text-white");
+      title?.classList.add("text-black");
+      subtitle?.classList.add("text-blue-700");
+      subtitle?.classList.remove("text-yellow-100");
+      svg?.classList.add("text-black");
+      svg?.classList.remove("text-white");
     } else {
-      title?.classList.add("text-yellow-100");
-      title?.classList.remove("text-blue-700");
+      title?.classList.add("text-white");
+      title?.classList.remove("text-black");
+      subtitle?.classList.remove("text-blue-700");
+      subtitle?.classList.add("text-yellow-100");
+      svg?.classList.remove("text-black");
+      svg?.classList.add("text-white");
     }
     list?.forEach((el) => {
+      console.log(el);
       if (theme === "dark") {
         el?.classList.add(
           "border-gray-600",
           "hover:bg-black",
-          "hover:text-white"
+          "hover:text-white",
+          "text-black"
         );
         el?.classList.remove(
           "border-white/10",
           "hover:bg-white/10",
           "hover:bg-white/10",
-          "hover:text-black"
+          "hover:text-black",
+          "text-white"
         );
       } else {
         el.classList.remove(
           "border-gray-600",
           "hover:bg-black",
-          "hover:text-white"
+          "hover:text-white",
+          "text-black"
         );
         el.classList.add(
           "border-white/10",
           "hover:bg-white/10",
-          "hover:bg-white/10"
+          "hover:bg-white/10",
+          "text-white"
         );
       }
     });
@@ -321,14 +448,14 @@
       list?.classList.remove("text-white/90");
       list?.classList.add("text-gray-700");
       span?.classList.remove("text-yellow-100/90");
-      span?.classList.add("text-black/90");
+      span?.classList.add("text-blue-700");
     } else {
       footer?.classList.add("bg-black/20");
       footer?.classList.remove("bg-gray-700/10");
       list?.classList.add("text-white/90");
       list?.classList.remove("text-gray-700");
       span?.classList.add("text-yellow-100/90");
-      span?.classList.remove("text-black/90");
+      span?.classList.remove("text-blue-700");
     }
   };
 </script>

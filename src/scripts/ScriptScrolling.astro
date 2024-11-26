@@ -1,8 +1,14 @@
 <script>
   window.addEventListener("scroll", () => {
     const nav = document.querySelector("#nav");
+    const links = nav?.querySelectorAll("a");
+    const theme = localStorage.getItem("theme");
     if (nav) {
       if (window.scrollY > 0) {
+        links?.forEach((el) => {
+          el.classList.add("text-white");
+          el.classList.remove("text-black");
+        });
         nav.classList.add(
           "border",
           "border-gray-900",
@@ -11,6 +17,17 @@
           "bg-gray-800"
         );
       } else {
+        if (theme === "light") {
+          links?.forEach((el) => {
+            el.classList.remove("text-white");
+            el.classList.add("text-black");
+          });
+        } else {
+          links?.forEach((el) => {
+            el.classList.add("text-white");
+            el.classList.remove("text-black");
+          });
+        }
         nav.classList.remove(
           "border",
           "border-gray-900",
