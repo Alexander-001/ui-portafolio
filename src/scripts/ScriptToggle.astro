@@ -88,10 +88,10 @@
     links?.forEach((el) => {
       if (theme === "dark") {
         el.classList.remove("text-white");
-        el.classList.add("text-blue-700");
+        el.classList.remove("text-blue-700");
       } else {
         el.classList.add("text-white");
-        el.classList.remove("text-blue-700");
+        el.classList.add("text-blue-700");
       }
     });
   };
@@ -429,7 +429,7 @@
       list?.classList.remove("text-white/90");
       list?.classList.add("text-gray-700");
       span?.classList.remove("text-yellow-100/90");
-      span?.classList.add("text-black");
+      span?.classList.add("text-blue-700");
     } else {
       footer?.classList.add("bg-black/20");
       footer?.classList.remove("bg-gray-700/10");

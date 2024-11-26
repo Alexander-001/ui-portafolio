@@ -61,13 +61,12 @@ import ThemeToggle from "./ThemeToggle.astro";
         `a[href="#${entry.target.id}"]`
       ) as any;
       if (entry.isIntersecting) {
-        navLink.classList.add("text-blue-500", "font-extrabold");
+        navLink.classList.add("text-blue-700", "font-extrabold");
       } else {
         navLink.classList.remove(
-          "text-blue-500",
           "font-extrabold",
-          "text-white",
-          "text-blue-700"
+          "text-blue-700",
+          "text-white"
         );
       }
     });
