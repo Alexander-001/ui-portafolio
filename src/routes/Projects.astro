@@ -1,16 +1,16 @@
 ---
 /* Components */
-import SocialLink from "../../components/SocialLink.astro";
+import SocialLink from "../components/SocialLink.astro";
 /* Icons */
-import AngularIcon from "../../icons/Angular.astro";
-import CSSIcon from "../../icons/Css.astro";
-import DirectionIcon from "../../icons/Direction.astro";
-import GithubIcon from "../../icons/Github.astro";
-import JavasScriptIcon from "../../icons/JavaScript.astro";
-import MongoIcon from "../../icons/Mongo.astro";
-import NodeIcon from "../../icons/Node.astro";
-import ReactIcon from "../../icons/React.astro";
-import TypeScriptIcon from "../../icons/TypeScript.astro";
+import AngularIcon from "../icons/Angular.astro";
+import CSSIcon from "../icons/Css.astro";
+import DirectionIcon from "../icons/Direction.astro";
+import GithubIcon from "../icons/Github.astro";
+import JavasScriptIcon from "../icons/JavaScript.astro";
+import MongoIcon from "../icons/Mongo.astro";
+import NodeIcon from "../icons/Node.astro";
+import ReactIcon from "../icons/React.astro";
+import TypeScriptIcon from "../icons/TypeScript.astro";
 
 const tagsColor = {
   react: {
@@ -102,7 +102,9 @@ const projects = [
         <h3 class="text-2xl md:text-4xl font-semibold text-yellow-100 mb-5">
           {title}
         </h3>
-        <p class="text-lg md:text-2xl mb-4 text-pretty">{description}</p>
+        <p class="text-white text-lg md:text-2xl mb-4 text-pretty">
+          {description}
+        </p>
         <ul class="flex gap-x-2 flex-row mb-2 flex-wrap">
           {tags.map((tag) => (
             <li class="mb-5">
@@ -124,19 +126,19 @@ const projects = [
           <ul class="flex gap-x-2 mt-6 flex-wrap" id="list-link">
             <li>
               <SocialLink href={frontGithub}>
-                <GithubIcon class="size-6" id="svg-github" />
+                <GithubIcon class="size-6 text-white" id="svg-github" />
                 FrontEnd Github
               </SocialLink>
             </li>
             <li>
               <SocialLink href={backGithub}>
-                <GithubIcon class="size-6" id="svg-github" />
+                <GithubIcon class="size-6 text-white" id="svg-github" />
                 Backend Github
               </SocialLink>
             </li>
             <li class="mt-5 md:mt-0">
               <SocialLink href={link}>
-                <DirectionIcon class="size-6" />
+                <DirectionIcon class="size-6 text-white" />
                 Ver proyecto
               </SocialLink>
             </li>

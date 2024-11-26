@@ -1,9 +1,9 @@
 ---
-/* Components */
+//* Components
 import Badge from "../components/Badge.astro";
 import Section from "../components/Section.astro";
 import SocialLink from "../components/SocialLink.astro";
-/* Icons */
+//* Icons
 import AboutIcon from "../icons/About.astro";
 import BookmarkIcon from "../icons/Bookmark.astro";
 import CodeIcon from "../icons/Code.astro";
@@ -12,14 +12,14 @@ import GithubIcon from "../icons/Github.astro";
 import GmailIcon from "../icons/Gmail.astro";
 import LinkedInIcon from "../icons/LinkedIn.astro";
 import SchoolIcon from "../icons/School.astro";
+//* Layout
 import Layout from "../layouts/Layout.astro";
-/* Layout */
-/* Routes */
-import Aboutme from "./routes/Aboutme.astro";
-import Contact from "./routes/Contact.astro";
-import Timeline from "./routes/Experience.astro";
-import Knowledge from "./routes/Knowledge.astro";
-import Projects from "./routes/Projects.astro";
+//* Routes
+import Aboutme from "../routes/Aboutme.astro";
+import Contact from "../routes/Contact.astro";
+import Timeline from "../routes/Experience.astro";
+import Knowledge from "../routes/Knowledge.astro";
+import Projects from "../routes/Projects.astro";
 ---
 
 <Layout
@@ -48,7 +48,9 @@ import Projects from "./routes/Projects.astro";
           <Badge>Disponible para trabajar</Badge>
         </a>
       </div>
-      <h2 class="text-xl md:text-3xl opacity-80 text-wrap mb-10 md:mb-0">
+      <h2
+        class="text-white text-xl md:text-3xl opacity-80 text-wrap mb-10 md:mb-0"
+      >
         <span>+ 5 años de experiencia.</span><span
           class="text-yellow-200/90"
           id="information"
@@ -60,23 +62,23 @@ import Projects from "./routes/Projects.astro";
         únicas.
       </h2>
       <ul class="flex gap-x-2 mt-4 flex-wrap">
-        <li class="mb-5">
+        <li class="mb-5 text-white">
           <SocialLink
             href="https://cl.linkedin.com/in/alexander-ortiz-cortes-07843a16b"
           >
-            <LinkedInIcon class="size-6" />
+            <LinkedInIcon class="size-6 text-white" />
             LinkedIn
           </SocialLink>
         </li>
-        <li>
+        <li class="text-white">
           <SocialLink href="https://github.com/Alexander-001">
-            <GithubIcon class="size-6" />
+            <GithubIcon class="size-6 text-white" />
             Github
           </SocialLink>
         </li>
-        <li>
+        <li class="text-white">
           <SocialLink href="mailto:alexander.ortiz.1098@gmail.com">
-            <GmailIcon class="size-6" />
+            <GmailIcon class="size-6 text-white" />
             alexander.ortiz.1098@gmail.com
           </SocialLink>
         </li>
@@ -84,45 +86,45 @@ import Projects from "./routes/Projects.astro";
     </Section>
     <Section id="experience">
       <h2
-        class="text-3xl md:text-5xl font-semibold mb-6 flex gap-x-3 items-center"
+        class="text-white text-3xl md:text-5xl font-semibold mb-6 flex gap-x-3 items-center"
       >
-        <BookmarkIcon class="size-8 md:size-12" />
+        <BookmarkIcon class="size-8 md:size-12 text-white" />
         Experiencia laboral
       </h2>
       <Timeline />
     </Section>
     <Section id="project">
       <h2
-        class="text-3xl md:text-5xl font-semibold mb-6 flex gap-x-3 items-center"
+        class="text-white text-3xl md:text-5xl font-semibold mb-6 flex gap-x-3 items-center"
       >
-        <CodeIcon class="size-8 md:size-12" />
+        <CodeIcon class="size-8 md:size-12 text-white" />
         Algunos proyectos
       </h2>
       <Projects />
     </Section>
     <Section id="knowledge">
       <h2
-        class="text-3xl md:text-5xl font-semibold mb-6 flex gap-x-3 items-center"
+        class="text-white text-3xl md:text-5xl font-semibold mb-6 flex gap-x-3 items-center"
       >
-        <SchoolIcon class="size-8 md:size-12" />
+        <SchoolIcon class="size-8 md:size-12 text-white" />
         Conocimientos
       </h2>
       <Knowledge />
     </Section>
     <Section id="about">
       <h2
-        class="text-3xl md:text-5xl font-semibold mb-6 flex gap-x-3 items-center"
+        class="text-white text-3xl md:text-5xl font-semibold mb-6 flex gap-x-3 items-center"
       >
-        <AboutIcon class="size-8 md:size-12" />
+        <AboutIcon class="size-8 md:size-12 text-white" />
         Sobre mí
       </h2>
       <Aboutme />
     </Section>
     <Section id="contact">
       <h2
-        class="text-3xl md:text-5xl font-semibold mb-6 flex gap-x-3 items-center"
+        class="text-white text-3xl md:text-5xl font-semibold mb-6 flex gap-x-3 items-center"
       >
-        <ContactIcon class="size-8 md:size-12" />
+        <ContactIcon class="size-8 md:size-12 text-white" />
         Contacto
       </h2>
       <Contact />
