@@ -104,10 +104,12 @@
     const links = top?.querySelectorAll("#social-links a");
     const address = document.querySelector("#address");
     const list = top?.querySelectorAll("#social-link");
+    console.log(links);
     list?.forEach((el) => {
       const svgGitHub = el.querySelector("#svg-github");
       const svgLinkedin = el.querySelector("#svg-linkedin");
       const svgEmail = el.querySelector("#svg-email");
+      const svgDownload = el.querySelector("#svg-download");
       if (theme === "dark") {
         svgGitHub?.classList.add("bg-black");
         svgGitHub?.classList.remove("bg-transparent");
@@ -115,6 +117,8 @@
         svgLinkedin?.classList.remove("text-white");
         svgEmail?.classList.add("text-black");
         svgEmail?.classList.remove("text-white");
+        svgDownload?.classList.add("text-black");
+        svgDownload?.classList.remove("text-white");
         subtitle?.classList.add("text-black");
         subtitle?.classList.remove("text-white");
         information?.classList.add("text-blue-900");
@@ -143,6 +147,8 @@
         svgLinkedin?.classList.remove("text-black");
         svgEmail?.classList.add("text-white");
         svgEmail?.classList.remove("text-black");
+        svgDownload?.classList.add("text-white");
+        svgDownload?.classList.remove("text-black");
         subtitle?.classList.remove("text-black");
         subtitle?.classList.add("text-white");
         information?.classList.remove("text-blue-900");
