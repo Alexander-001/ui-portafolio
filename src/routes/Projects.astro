@@ -6,16 +6,25 @@ import AngularIcon from "../icons/Angular.astro";
 import CSSIcon from "../icons/Css.astro";
 import DirectionIcon from "../icons/Direction.astro";
 import GithubIcon from "../icons/Github.astro";
+import JavaIcon from "../icons/Java.astro";
 import JavasScriptIcon from "../icons/JavaScript.astro";
 import MongoIcon from "../icons/Mongo.astro";
+import MysqlIcon from "../icons/Mysql.astro";
 import NodeIcon from "../icons/Node.astro";
 import ReactIcon from "../icons/React.astro";
+import SpringIcon from "../icons/Spring.astro";
+import TailwindIcon from "../icons/Tailwind.astro";
 import TypeScriptIcon from "../icons/TypeScript.astro";
 
 const tagsColor = {
   react: {
     name: "React",
     class: "bg-black text-white bg-gray-800 text-lg md:text-xl",
+    icon: ReactIcon,
+  },
+  reactNative: {
+    name: "React Native",
+    class: "bg-blue-700 text-white text-lg md:text-xl",
     icon: ReactIcon,
   },
   css: {
@@ -48,6 +57,26 @@ const tagsColor = {
     class: "bg-green-800/70 text-white text-lg md:text-xl",
     icon: MongoIcon,
   },
+  tailwind: {
+    name: "Tailwind CSS",
+    class: "bg-sky-400 text-white text-lg md:text-xl",
+    icon: TailwindIcon,
+  },
+  springboot: {
+    name: "SpringBoot",
+    class: "bg-green-700/90 text-white text-lg md:text-xl",
+    icon: SpringIcon,
+  },
+  java: {
+    name: "Java",
+    class: "bg-orange-600/40 text-white text-lg md:text-xl",
+    icon: JavaIcon,
+  },
+  mysql: {
+    name: "MySQL",
+    class: "bg-sky-900 text-white text-lg md:text-xl",
+    icon: MysqlIcon,
+  },
 };
 
 const projects = [
@@ -60,6 +89,24 @@ const projects = [
     backGithub: "",
     image: "/autoconsulta.png",
     tags: [tagsColor.react, tagsColor.typescript, tagsColor.css],
+  },
+  {
+    title: "Cafeteria",
+    description:
+      "Proyecto en desarrollo enfocado en cafeterías, destinado a implementar un sistema para registrar productos y tiendas, con el objetivo de mejorar la comodidad y eficiencia en la atención al cliente.",
+    link: "#",
+    frontGithub: "https://github.com/Alexander-001/ui-the-coffee",
+    backGithub: "https://github.com/Alexander-001/ms-the-coffee",
+    image: "/cafeProducts.png",
+    tags: [
+      tagsColor.react,
+      tagsColor.reactNative,
+      tagsColor.typescript,
+      tagsColor.java,
+      tagsColor.springboot,
+      tagsColor.tailwind,
+      tagsColor.mysql,
+    ],
   },
   {
     title: "Tablero Basket",
@@ -136,12 +183,14 @@ const projects = [
                 Backend Github
               </SocialLink>
             </li>
-            <li class="mt-5 md:mt-0">
-              <SocialLink href={link}>
-                <DirectionIcon class="size-6 text-white" />
-                Ver proyecto
-              </SocialLink>
-            </li>
+            {link !== "#" && (
+              <li class="mt-5 md:mt-0">
+                <SocialLink href={link}>
+                  <DirectionIcon class="size-6 text-white" />
+                  Ver proyecto
+                </SocialLink>
+              </li>
+            )}
           </ul>
         )}
       </article>
