@@ -1,5 +1,4 @@
 ---
-import ScriptScrolling from "../scripts/ScriptScrolling.astro";
 import ThemeToggle from "./ThemeToggle.astro";
 ---
 
@@ -9,7 +8,7 @@ import ThemeToggle from "./ThemeToggle.astro";
 >
   <nav
     id="nav"
-    class="ease-out flex flex-row flex-wrap gap-x-5 md:gap-x-10 justify-center items-center mx-2"
+    class="ease-out flex flex-row flex-wrap gap-x-5 md:gap-x-10 justify-center items-center mx-2 bg-gray-700 border border-gray-700 p-2 rounded-3xl"
   >
     <a
       href="#top"
@@ -45,7 +44,6 @@ import ThemeToggle from "./ThemeToggle.astro";
 </header>
 
 <ThemeToggle />
-<ScriptScrolling />
 
 <script>
   const sections = document.querySelectorAll("section[id]");
@@ -61,13 +59,9 @@ import ThemeToggle from "./ThemeToggle.astro";
         `a[href="#${entry.target.id}"]`
       ) as any;
       if (entry.isIntersecting) {
-        navLink.classList.add("text-blue-700", "font-extrabold");
+        navLink.classList.add("text-blue-700", "font-extrabold", "text-xl");
       } else {
-        navLink.classList.remove(
-          "font-extrabold",
-          "text-blue-700",
-          "text-white"
-        );
+        navLink.classList.remove("font-extrabold", "text-blue-700", "text-xl");
       }
     });
   };

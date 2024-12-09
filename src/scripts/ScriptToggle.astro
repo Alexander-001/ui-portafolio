@@ -84,12 +84,21 @@
   /* Header */
   const switchHeader = (theme: string) => {
     const header = document.querySelector("#header");
+    const nav = document.querySelector("#nav");
     const links = header?.querySelectorAll("a");
     links?.forEach((el) => {
       if (theme === "dark") {
+        nav?.classList.remove("bg-gray-700");
+        nav?.classList.add("bg-gray-100");
+        nav?.classList.remove("border-gray-700");
+        nav?.classList.add("border-gray-300");
         el.classList.remove("text-white");
         el.classList.remove("text-blue-700");
       } else {
+        nav?.classList.add("bg-gray-700");
+        nav?.classList.remove("bg-gray-100");
+        nav?.classList.add("border-gray-700");
+        nav?.classList.remove("border-gray-300");
         el.classList.add("text-white");
         el.classList.add("text-blue-700");
       }
