@@ -1,72 +1,61 @@
 ---
-import ThemeToggle from "./ThemeToggle.astro";
 ---
 
 <header
   id="header"
-  class="fixed top-0 left-0 z-10 flex justify-center items-center py-5 w-full mx-auto"
+  class="fixed top-0 left-0 z-50 flex justify-center items-center py-4 w-full"
 >
   <nav
     id="nav"
-    class="ease-out flex flex-row flex-wrap gap-x-5 md:gap-x-10 justify-center items-center mx-2 bg-gray-700 border border-gray-700 p-2 rounded-3xl"
+    class="flex flex-row flex-wrap gap-x-0.5 md:gap-x-1 justify-center items-center px-2 py-2 bg-white/[0.04] backdrop-blur-xl border border-white/[0.09] rounded-full shadow-xl shadow-black/40"
   >
-    <a
-      href="#top"
-      class="nav-link text-white transition hover:text-blue-500 dark:hover:text-blue-500 text-md pl-5"
-      >Inicio</a
-    >
-    <a
-      href="#experience"
-      class="nav-link text-white transition hover:text-blue-500 dark:hover:text-blue-500"
-      >Experiencia</a
-    >
-    <a
-      href="#projects"
-      class="nav-link text-white transition hover:text-blue-500 dark:hover:text-blue-500"
-      >Proyectos</a
-    >
-    <a
-      href="#knowledge"
-      class="nav-link text-white transition hover:text-blue-500 dark:hover:text-blue-500"
-      >Conocimientos</a
-    >
-    <a
-      href="#about"
-      class="nav-link text-white transition hover:text-blue-500 dark:hover:text-blue-500"
-      >Sobre mi</a
-    >
-    <a
-      href="#contact"
-      class="nav-link text-white transition hover:text-blue-500 dark:hover:text-blue-500 pr-5"
-      >Contacto</a
-    >
+    <a href="#top"        class="nav-link">Inicio</a>
+    <a href="#experience" class="nav-link">Experiencia</a>
+    <a href="#projects"   class="nav-link">Proyectos</a>
+    <a href="#knowledge"      class="nav-link">Conocimientos</a>
+    <a href="#certifications" class="nav-link">Certificaciones</a>
+    <a href="#about"          class="nav-link">Sobre mí</a>
+    <a href="#contact"        class="nav-link">Contacto</a>
   </nav>
 </header>
 
-<ThemeToggle />
+<style>
+  .nav-link {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.875rem;
+    padding: 0.375rem 0.875rem;
+    border-radius: 9999px;
+    transition: color 0.2s, background 0.2s;
+    white-space: nowrap;
+  }
+  .nav-link:hover {
+    color: white;
+    background: rgba(255, 255, 255, 0.08);
+  }
+  .nav-link.active {
+    color: white;
+    background: rgba(124, 58, 237, 0.25);
+    font-weight: 500;
+  }
+</style>
 
 <script>
   const sections = document.querySelectorAll("section[id]");
-  const observerOptions = {
-    root: null,
-    rootMargin: "0px",
-    threshold: 0.3,
-  };
 
-  const observerCallback = (entries: any[]) => {
-    entries.forEach((entry: any) => {
-      const navLink = document.querySelector(
-        `a[href="#${entry.target.id}"]`
-      ) as any;
-      if (entry.isIntersecting) {
-        navLink.classList.add("text-blue-700", "font-extrabold", "text-xl");
-      } else {
-        navLink.classList.remove("font-extrabold", "text-blue-700", "text-xl");
-      }
-    });
-  };
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        const link = document.querySelector(`a[href="#${entry.target.id}"]`);
+        if (!link) return;
+        if (entry.isIntersecting) {
+          link.classList.add("active");
+        } else {
+          link.classList.remove("active");
+        }
+      });
+    },
+    { rootMargin: "-25% 0px -65% 0px", threshold: 0 }
+  );
 
-  const observer = new IntersectionObserver(observerCallback, observerOptions);
-
-  sections.forEach((section) => observer.observe(section));
+  sections.forEach((s) => observer.observe(s));
 </script>

@@ -11,7 +11,7 @@ import Header from "../components/Header.astro";
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="description" content={description} />
@@ -21,36 +21,56 @@ import Header from "../components/Header.astro";
     <title>{title}</title>
     <ViewTransitions />
     <style is:global>
-      :root {
-        color-scheme: light dark;
-      }
       html {
         font-family: "Onest Variable", system-ui, sans-serif;
         scroll-behavior: smooth;
       }
+
       body {
         display: flex;
         min-height: 100vh;
         flex-direction: column;
+        background-color: #05071a;
+        background-image:
+          radial-gradient(ellipse 80% 55% at 50% -8%, rgba(124, 58, 237, 0.18) 0%, transparent 70%),
+          radial-gradient(ellipse 45% 45% at 90% 45%, rgba(59, 130, 246, 0.09) 0%, transparent 70%),
+          radial-gradient(ellipse 38% 38% at 5% 88%, rgba(109, 40, 217, 0.08) 0%, transparent 70%);
+        color: #f1f5f9;
       }
 
       @media (prefers-reduced-motion: reduce) {
-        html {
-          scroll-behavior: auto;
-        }
+        html { scroll-behavior: auto; }
       }
 
-      @media (prefers-color-scheme: dark) {
-        body {
-          color: rgba(255, 255, 255, 0.9);
-        }
+      ::-webkit-scrollbar { width: 5px; }
+      ::-webkit-scrollbar-track { background: #05071a; }
+      ::-webkit-scrollbar-thumb {
+        background: rgba(124, 58, 237, 0.4);
+        border-radius: 4px;
       }
+      ::-webkit-scrollbar-thumb:hover {
+        background: rgba(124, 58, 237, 0.75);
+      }
+
+      ::selection {
+        background: rgba(124, 58, 237, 0.3);
+        color: #f1f5f9;
+      }
+
+      @keyframes fadeUp {
+        from { opacity: 0; transform: translateY(18px); }
+        to   { opacity: 1; transform: translateY(0); }
+      }
+
+      .hero-fade { opacity: 0; animation: fadeUp 0.65s ease forwards; }
+      .d1 { animation-delay: 0.05s; }
+      .d2 { animation-delay: 0.18s; }
+      .d3 { animation-delay: 0.30s; }
+      .d4 { animation-delay: 0.44s; }
+      .d5 { animation-delay: 0.56s; }
     </style>
   </head>
-  <body
-    id="theme-body"
-    class="absolute top-0 z-[-2] h-screen w-screen bg-[#000000] bg-[radial-gradient(#ffffff_0px,#00091d_1px)] bg-[size:20px_20px]"
-  >
+  <body>
     <Header />
     <slot />
     <Footer />

@@ -12,11 +12,13 @@ import DownloadIcon from "../icons/Download.astro";
 import GithubIcon from "../icons/Github.astro";
 import GmailIcon from "../icons/Gmail.astro";
 import LinkedInIcon from "../icons/LinkedIn.astro";
+import AwardIcon from "../icons/Award.astro";
 import SchoolIcon from "../icons/School.astro";
 //* Layout
 import Layout from "../layouts/Layout.astro";
 //* Routes
 import Aboutme from "../routes/Aboutme.astro";
+import Certifications from "../routes/Certifications.astro";
 import Contact from "../routes/Contact.astro";
 import Timeline from "../routes/Experience.astro";
 import Knowledge from "../routes/Knowledge.astro";
@@ -24,117 +26,117 @@ import Projects from "../routes/Projects.astro";
 ---
 
 <Layout
-  title="Alexander Ortiz - Desarrollador Full Stack"
-  description="Analista Programador con experiencia en proyectos importantes."
+  title="Alexander Ortiz — Desarrollador Full Stack"
+  description="Desarrollador Full Stack con más de 5 años de experiencia en proyectos bancarios, energéticos y móviles."
 >
   <main class="px-4">
-    <Section class="py-44 pb-32" id="top">
-      <img
-        class="rounded-full size-16 mb-4"
-        src="./profile.jpeg"
-        alt="Avatar logo"
-      />
-      <h1
-        class="typewriter text-white mt-2 md:mt-0 text-xl sm:text-3xl md:text-5xl font-bold flex flex-row gap-x-4 pb-5 items-center flex-wrap md:flex-nowrap"
-      >
-        Hola! Soy Alexander
-      </h1>
-      <div class="mt-4 mb-5 ml-2">
+    <!-- HERO -->
+    <Section class="pt-40 pb-28" id="top">
+      <div class="hero-fade d1 flex items-center gap-4 mb-6 flex-wrap">
+        <img
+          class="rounded-full size-16 ring-2 ring-violet-500/40 ring-offset-2 ring-offset-[#05071a]"
+          src="./profile.jpeg"
+          alt="Alexander Ortiz"
+        />
         <a
           href="https://cl.linkedin.com/in/alexander-ortiz-cortes-07843a16b"
           target="_blank"
           rel="noopener"
-          class="flex items-center transition md:justify-start md:hover:scale-105"
+          class="flex items-center transition hover:scale-105"
         >
           <Badge>Disponible para trabajar</Badge>
         </a>
       </div>
-      <h2
-        class="text-white text-xl md:text-3xl opacity-80 text-wrap mb-10 md:mb-0"
-      >
-        <span>+ 5 años de experiencia.</span><span
-          class="text-yellow-200/90"
-          id="information"
-        >
-          Desarrollador Full Stack y Mobile.</span
-        ><span class="text-red-100/90" id="address">
-          De Santiago, Chile 🇨🇱.</span
-        > Soy un apasionado por la tecnología, comprometido a realizar aplicaciones
-        únicas.
+
+      <h1 class="hero-fade d2 text-white text-3xl sm:text-4xl md:text-6xl font-bold leading-tight pb-2">
+        Hola, soy <span id="tw-text" class="gradient-name"></span><span id="tw-cursor" class="tw-cursor">|</span>
+      </h1>
+
+      <h2 class="hero-fade d3 text-white/65 text-lg md:text-xl mt-5 mb-8 leading-relaxed max-w-2xl">
+        <span class="text-white font-semibold">+7 años de experiencia.</span>
+        {" "}Desarrollador
+        <span class="text-violet-400 font-medium">Full Stack y Mobile</span>.
+        {" "}De Santiago, Chile 🇨🇱 — apasionado por construir aplicaciones únicas
+        que resuelvan problemas reales.
       </h2>
-      <ul class="flex gap-x-2 mt-4 flex-wrap" id="social-links">
-        <li class="mb-5 text-white">
-          <SocialLink
-            href="https://cl.linkedin.com/in/alexander-ortiz-cortes-07843a16b"
-          >
-            <LinkedInIcon class="size-6 text-white" />
+
+      <ul class="hero-fade d4 flex gap-3 mt-2 flex-wrap">
+        <li>
+          <SocialLink href="https://cl.linkedin.com/in/alexander-ortiz-cortes-07843a16b">
+            <LinkedInIcon class="size-5 text-white" />
             LinkedIn
           </SocialLink>
         </li>
-        <li class="text-white">
+        <li>
           <SocialLink href="https://github.com/Alexander-001">
-            <GithubIcon class="size-6 text-white" />
-            Github
+            <GithubIcon class="size-5 text-white" />
+            GitHub
           </SocialLink>
         </li>
-        <li class="text-white">
+        <li>
           <SocialLink href="mailto:alexander.ortiz.1098@gmail.com">
-            <GmailIcon class="size-6 text-white" />
-            alexander.ortiz.1098@gmail.com
+            <GmailIcon class="size-5 text-white" />
+            Email
           </SocialLink>
         </li>
-        <li class="text-white">
-          <SocialLink
-            href="./AlexanderOrtizCV.pdf"
-            download="AlexanderOrtiz.pdf"
-          >
-            <DownloadIcon class="size-6 text-white" />
-            CV
+        <li>
+          <SocialLink href="./AlexanderOrtizCV.pdf" download="AlexanderOrtiz.pdf">
+            <DownloadIcon class="size-5 text-white" />
+            Descargar CV
           </SocialLink>
         </li>
       </ul>
     </Section>
+
+    <!-- EXPERIENCE -->
     <Section id="experience">
-      <h2
-        class="text-white text-3xl md:text-5xl font-semibold mb-6 flex gap-x-3 items-center"
-      >
-        <BookmarkIcon class="size-8 md:size-12 text-white" />
+      <h2 class="section-title">
+        <BookmarkIcon class="size-7 md:size-9 text-violet-400" />
         Experiencia laboral
       </h2>
       <Timeline />
     </Section>
+
+    <!-- PROJECTS -->
     <Section id="projects">
-      <h2
-        class="text-white text-3xl md:text-5xl font-semibold mb-6 flex gap-x-3 items-center"
-      >
-        <CodeIcon class="size-8 md:size-12 text-white" />
-        Algunos proyectos
+      <h2 class="section-title">
+        <CodeIcon class="size-7 md:size-9 text-violet-400" />
+        Proyectos destacados
       </h2>
       <Projects />
     </Section>
+
+    <!-- KNOWLEDGE -->
     <Section id="knowledge">
-      <h2
-        class="text-white text-3xl md:text-5xl font-semibold mb-6 flex gap-x-3 items-center"
-      >
-        <SchoolIcon class="size-8 md:size-12 text-white" />
+      <h2 class="section-title">
+        <SchoolIcon class="size-7 md:size-9 text-violet-400" />
         Conocimientos
       </h2>
       <Knowledge />
     </Section>
+
+    <!-- CERTIFICATIONS -->
+    <Section id="certifications">
+      <h2 class="section-title">
+        <AwardIcon class="size-7 md:size-9 text-violet-400" />
+        Certificaciones
+      </h2>
+      <Certifications />
+    </Section>
+
+    <!-- ABOUT -->
     <Section id="about">
-      <h2
-        class="text-white text-3xl md:text-5xl font-semibold mb-6 flex gap-x-3 items-center"
-      >
-        <AboutIcon class="size-8 md:size-12 text-white" />
+      <h2 class="section-title">
+        <AboutIcon class="size-7 md:size-9 text-violet-400" />
         Sobre mí
       </h2>
       <Aboutme />
     </Section>
+
+    <!-- CONTACT -->
     <Section id="contact">
-      <h2
-        class="text-white text-3xl md:text-5xl font-semibold mb-6 flex gap-x-3 items-center"
-      >
-        <ContactIcon class="size-8 md:size-12 text-white" />
+      <h2 class="section-title">
+        <ContactIcon class="size-7 md:size-9 text-violet-400" />
         Contacto
       </h2>
       <Contact />
@@ -143,34 +145,71 @@ import Projects from "../routes/Projects.astro";
 </Layout>
 
 <style>
-  .typewriter {
-    overflow: hidden;
-    border-right: 0.15em solid rgb(240, 255, 167);
-    white-space: nowrap;
-    animation:
-      typing 5s steps(40, end) infinite,
-      blink-caret 0.75s step-end infinite;
+  .section-title {
+    color: white;
+    font-size: clamp(1.6rem, 4vw, 2.5rem);
+    font-weight: 700;
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
   }
 
-  @keyframes typing {
-    0% {
-      width: 0;
-    }
-    50% {
-      width: 70%;
-    }
-    100% {
-      width: 0;
-    }
+  .gradient-name {
+    background: linear-gradient(135deg, #c4b5fd 0%, #818cf8 50%, #60a5fa 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
   }
 
-  @keyframes blink-caret {
-    from,
-    to {
-      border-color: transparent;
-    }
-    50% {
-      border-color: rgb(240, 255, 167);
-    }
+  .tw-cursor {
+    color: rgba(167, 139, 250, 0.8);
+    font-weight: 200;
+    animation: blink 0.75s step-end infinite;
+  }
+
+  @keyframes blink {
+    0%, 100% { opacity: 1; }
+    50%       { opacity: 0; }
   }
 </style>
+
+<script>
+  const texts = ["Alexander", "Software Engineer"];
+  const el = document.getElementById("tw-text") as HTMLElement;
+  const cursor = document.getElementById("tw-cursor") as HTMLElement;
+
+  let textIndex = 0;
+  let charIndex = 0;
+  let isDeleting = false;
+
+  function tick() {
+    const current = texts[textIndex];
+
+    if (isDeleting) {
+      charIndex--;
+    } else {
+      charIndex++;
+    }
+
+    el.textContent = current.slice(0, charIndex);
+
+    let delay = isDeleting ? 55 : 95;
+
+    if (!isDeleting && charIndex === current.length) {
+      // Finished typing — pause before deleting
+      delay = 2000;
+      isDeleting = true;
+    } else if (isDeleting && charIndex === 0) {
+      // Finished deleting — move to next text
+      isDeleting = false;
+      textIndex = (textIndex + 1) % texts.length;
+      delay = 350;
+    }
+
+    setTimeout(tick, delay);
+  }
+
+  // Small initial delay so the fade-in animation finishes first
+  setTimeout(tick, 600);
+</script>

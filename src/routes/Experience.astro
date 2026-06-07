@@ -1,44 +1,47 @@
 ---
-/* Components */
 import TimelineItem from "../components/ExperienceItem.astro";
 
 const experience = [
   {
-    date: "Marzo 2022 - Actualidad",
-    title: "Desarrollador Full Stack - SII Group",
+    date: "Febrero 2025 - Presente",
+    title: "Software Engineer — Equifax",
+    project: "Equifax",
+    description:
+      "Responsable del mantenimiento y evolución de aplicativos críticos con foco en seguridad y estabilidad. Identifico y resuelvo vulnerabilidades, lidero migraciones de versiones de Spring Boot y Angular, y normalizo proyectos de distintos países bajo estándares comunes. Adicionalmente, impulso la adopción de IA en el flujo de desarrollo, implementando herramientas como Gemini, GitHub Copilot, Claude Code y la integración de APIs de OpenAI para potenciar la productividad y la calidad del equipo.",
+    link: "https://www.equifax.com",
+    messageLink: "Equifax",
+  },
+  {
+    date: "Marzo 2022 - Febrero 2025",
+    title: "Desarrollador Full Stack — SII Group",
     project: "Scotiabank",
     description:
-      "Responsable del desarrollo y mantenimiento de aplicaciones bancarias. Lideré la migración de sistemas desde Visual Basic a tecnologías modernas como ReactJS, integrando microservicios desarrollados en Spring Boot (Java). Además, implementé pruebas unitarias para garantizar altos niveles de cobertura de código, asegurando la calidad y el rendimiento de las soluciones entregadas.",
+      "Responsable del desarrollo y mantenimiento de aplicaciones bancarias. Lideré la migración de sistemas desde Visual Basic a tecnologías modernas como ReactJS, integrando microservicios en Spring Boot (Java). Implementé pruebas unitarias para garantizar altos niveles de cobertura de código, asegurando la calidad y el rendimiento de las soluciones entregadas.",
     link: "https://sii-group.com/es-CL",
     messageLink: "SII Group",
   },
   {
     date: "Enero 2021 - Marzo 2022",
-    title: "Desarrollador Front End - NTT Data Europe & LATAM (Everis)",
+    title: "Desarrollador Front End — NTT Data Europe & LATAM",
     project: "ENEL",
     description:
-      "Líder del proyecto Autoconsultas, desarrollado utilizando ReactJS, enfocado en proporcionar información en tiempo real a los clientes mediante un tótem de autoconsulta. Este proyecto fue implementado con éxito para Enel Chile, Enel Colombia y Enel Colina, destacando por su impacto en la mejora de la experiencia del cliente y la eficiencia en la entrega de información.",
+      "Líder del proyecto Autoconsultas, desarrollado con ReactJS, enfocado en proporcionar información en tiempo real mediante un tótem de autoconsulta. Implementado para Enel Chile, Enel Colombia y Enel Colina, con impacto directo en la mejora de la experiencia del cliente.",
     link: "https://cl.nttdata.com",
     messageLink: "NTT Data Chile",
   },
   {
     date: "Febrero 2019 - Enero 2021",
-    title: "Desarrollador CMS - NTT Data Europe & LATAM (Everis)",
-    project: "LATAM",
+    title: "Desarrollador CMS — NTT Data Europe & LATAM",
+    project: "LATAM Airlines",
     description:
-      "Especialista en Adobe Experience Manager (AEM), encargado de liderar la migración integral del contenido del sitio latam.com hacia una versión más avanzada de la plataforma. Además, aseguré el mantenimiento continuo y optimización del sistema, garantizando un funcionamiento eficiente y alineado con las necesidades del cliente.",
+      "Especialista en Adobe Experience Manager (AEM), liderando la migración integral del contenido de latam.com hacia una versión más avanzada de la plataforma. Aseguré el mantenimiento continuo y la optimización del sistema, garantizando eficiencia y alineación con las necesidades del cliente.",
     link: "https://cl.nttdata.com",
     messageLink: "NTT Data Chile",
   },
+  
 ];
 ---
 
-<ol class="relative border-s border-gray-200 ml-4">
-  {
-    experience.map((exp) => (
-      <li class="mb-10 ms-4">
-        <TimelineItem {...exp} />
-      </li>
-    ))
-  }
-</ol>
+<div class="flex flex-col gap-4">
+  {experience.map((exp) => <TimelineItem {...exp} />)}
+</div>

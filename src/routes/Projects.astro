@@ -1,7 +1,5 @@
 ---
-/* Components */
 import SocialLink from "../components/SocialLink.astro";
-/* Icons */
 import AngularIcon from "../icons/Angular.astro";
 import CSSIcon from "../icons/Css.astro";
 import DirectionIcon from "../icons/Direction.astro";
@@ -17,73 +15,25 @@ import TailwindIcon from "../icons/Tailwind.astro";
 import TypeScriptIcon from "../icons/TypeScript.astro";
 
 const tagsColor = {
-  react: {
-    name: "React",
-    class: "bg-black text-white bg-gray-800 text-lg md:text-xl",
-    icon: ReactIcon,
-  },
-  reactNative: {
-    name: "React Native",
-    class: "bg-blue-700 text-white text-lg md:text-xl",
-    icon: ReactIcon,
-  },
-  css: {
-    name: "CSS",
-    class: "text-white bg-blue-900 text-lg md:text-xl",
-    icon: CSSIcon,
-  },
-  javascript: {
-    name: "JavaScript",
-    class: "bg-black text-white bg-yellow-500/60 text-lg md:text-xl",
-    icon: JavasScriptIcon,
-  },
-  typescript: {
-    name: "TypeScript",
-    class: "bg-blue-400/70 text-white text-lg md:text-xl",
-    icon: TypeScriptIcon,
-  },
-  angular: {
-    name: "Angular",
-    class: "bg-red-400 text-white text-lg md:text-xl",
-    icon: AngularIcon,
-  },
-  nodejs: {
-    name: "NodeJS",
-    class: "bg-green-400/70 text-white text-lg md:text-xl",
-    icon: NodeIcon,
-  },
-  mongo: {
-    name: "Mongo DB",
-    class: "bg-green-800/70 text-white text-lg md:text-xl",
-    icon: MongoIcon,
-  },
-  tailwind: {
-    name: "Tailwind CSS",
-    class: "bg-sky-400 text-white text-lg md:text-xl",
-    icon: TailwindIcon,
-  },
-  springboot: {
-    name: "SpringBoot",
-    class: "bg-green-700/90 text-white text-lg md:text-xl",
-    icon: SpringIcon,
-  },
-  java: {
-    name: "Java",
-    class: "bg-orange-600/40 text-white text-lg md:text-xl",
-    icon: JavaIcon,
-  },
-  mysql: {
-    name: "MySQL",
-    class: "bg-sky-900 text-white text-lg md:text-xl",
-    icon: MysqlIcon,
-  },
+  react:       { name: "React",        class: "tag-gray",   icon: ReactIcon },
+  reactNative: { name: "React Native", class: "tag-blue",   icon: ReactIcon },
+  css:         { name: "CSS",          class: "tag-blue2",  icon: CSSIcon },
+  javascript:  { name: "JavaScript",   class: "tag-yellow", icon: JavasScriptIcon },
+  typescript:  { name: "TypeScript",   class: "tag-indigo", icon: TypeScriptIcon },
+  angular:     { name: "Angular",      class: "tag-red",    icon: AngularIcon },
+  nodejs:      { name: "NodeJS",       class: "tag-green",  icon: NodeIcon },
+  mongo:       { name: "MongoDB",      class: "tag-emerald",icon: MongoIcon },
+  tailwind:    { name: "Tailwind CSS", class: "tag-sky",    icon: TailwindIcon },
+  springboot:  { name: "Spring Boot",  class: "tag-lime",   icon: SpringIcon },
+  java:        { name: "Java",         class: "tag-orange", icon: JavaIcon },
+  mysql:       { name: "MySQL",        class: "tag-cyan",   icon: MysqlIcon },
 };
 
 const projects = [
   {
-    title: "Totem Autoconsulta Enel",
+    title: "Tótem Autoconsulta Enel",
     description:
-      "Proyecto desarrollado para Enel para automatizar consultas de clientes. Lideré el desarrollo, coordinando con maquetadores CSS y diseñadores UX/UI, impartí inducciones a nuevos desarrolladores e implementé el aplicativo en un entorno real.",
+      "Proyecto desarrollado para Enel para automatizar consultas de clientes. Lideré el desarrollo coordinando con maquetadores CSS y diseñadores UX/UI, impartí inducciones a nuevos desarrolladores e implementé el aplicativo en entorno real.",
     link: "",
     frontGithub: "",
     backGithub: "",
@@ -91,109 +41,133 @@ const projects = [
     tags: [tagsColor.react, tagsColor.typescript, tagsColor.css],
   },
   {
-    title: "Cafeteria",
+    title: "Cafetería",
     description:
-      "Proyecto en desarrollo enfocado en cafeterías, destinado a implementar un sistema para registrar productos y tiendas, con el objetivo de mejorar la comodidad y eficiencia en la atención al cliente.",
+      "Sistema para cafeterías que permite registrar productos y tiendas, mejorando la comodidad y eficiencia en la atención al cliente.",
     link: "#",
     frontGithub: "https://github.com/Alexander-001/ui-the-coffee",
     backGithub: "https://github.com/Alexander-001/ms-the-coffee",
     image: "/cafeProducts.png",
     tags: [
-      tagsColor.react,
-      tagsColor.reactNative,
-      tagsColor.typescript,
-      tagsColor.java,
-      tagsColor.springboot,
-      tagsColor.tailwind,
-      tagsColor.mysql,
+      tagsColor.react, tagsColor.reactNative, tagsColor.typescript,
+      tagsColor.java, tagsColor.springboot, tagsColor.tailwind, tagsColor.mysql,
     ],
   },
   {
     title: "Tablero Basket",
     description:
-      "Proyecto personal diseñado para ofrecer una solución a equipos de baloncesto, facilitando el cálculo y seguimiento de la puntuación global de sus partidos.",
+      "Aplicación para equipos de baloncesto que facilita el cálculo y seguimiento de puntuación global durante los partidos en tiempo real.",
     link: "https://alexander-001.github.io/ui-tablero-basket",
     frontGithub: "https://github.com/Alexander-001/ui-tablero-basket",
     backGithub: "https://github.com/Alexander-001/ms-tablero-basket",
     image: "/tablero.png",
-    tags: [
-      tagsColor.angular,
-      tagsColor.css,
-      tagsColor.typescript,
-      tagsColor.nodejs,
-      tagsColor.mongo,
-    ],
+    tags: [tagsColor.angular, tagsColor.css, tagsColor.typescript, tagsColor.nodejs, tagsColor.mongo],
   },
   {
-    title: "PokeApi",
+    title: "PokéAPI",
     description:
-      "Proyecto personal para listar todos los Pokémon con sus estadísticas, creado con fines de aprendizaje y entretenimiento.",
+      "Aplicación para explorar todos los Pokémon con sus estadísticas, creada con fines de aprendizaje. Consume la PokéAPI pública con backend propio.",
     link: "https://capable-taiyaki-2f7948.netlify.app",
     frontGithub: "https://github.com/Alexander-001/pokeapifront",
     backGithub: "https://github.com/Alexander-001/pokeapiserver",
     image: "/pokemon.png",
-    tags: [
-      tagsColor.react,
-      tagsColor.css,
-      tagsColor.javascript,
-      tagsColor.nodejs,
-    ],
+    tags: [tagsColor.react, tagsColor.css, tagsColor.javascript, tagsColor.nodejs],
   },
 ];
 ---
 
-{
-  projects.map(
-    ({ title, description, link, frontGithub, backGithub, image, tags }) => (
-      <article class="mb-20">
-        <h3 class="text-2xl md:text-4xl font-semibold text-yellow-100 mb-5">
-          {title}
-        </h3>
-        <p class="text-white text-lg md:text-2xl mb-4 text-pretty">
-          {description}
-        </p>
-        <ul class="flex gap-x-2 flex-row mb-2 flex-wrap">
-          {tags.map((tag) => (
-            <li class="mb-5">
-              <span
-                class={`${tag.class} flex gap-x-2 rounded-full text-sm py-1 px-2`}
-              >
-                <tag.icon class="size-4 md:size-8" />
-                {tag.name}
-              </span>
-            </li>
-          ))}
-        </ul>
+<div class="flex flex-col gap-8">
+  {projects.map(({ title, description, link, frontGithub, backGithub, image, tags }) => (
+    <article class="project-card">
+      <div class="overflow-hidden rounded-xl mb-5">
         <img
-          class="rounded shadow-2xl shadow-white/10 mt-5"
+          class="w-full object-cover transition-transform duration-500 hover:scale-105"
           src={image}
-          alt={`Captura de pantalla del proyecto ${image}`}
+          alt={`Captura del proyecto ${title}`}
+          loading="lazy"
         />
-        {link && frontGithub && backGithub && (
-          <ul class="flex gap-x-2 mt-6 flex-wrap" id="list-link">
+      </div>
+
+      <h3 class="text-xl md:text-2xl font-bold text-white mb-2">{title}</h3>
+      <p class="text-white/60 text-sm md:text-base leading-relaxed mb-4">{description}</p>
+
+      <ul class="flex gap-2 flex-wrap mb-5">
+        {tags.map((tag) => (
+          <li>
+            <span class={`tag ${tag.class}`}>
+              <tag.icon class="size-3.5" />
+              {tag.name}
+            </span>
+          </li>
+        ))}
+      </ul>
+
+      {(frontGithub || link) && (
+        <ul class="flex gap-3 flex-wrap">
+          {frontGithub && (
             <li>
               <SocialLink href={frontGithub}>
-                <GithubIcon class="size-6 text-white" id="svg-github" />
-                FrontEnd Github
+                <GithubIcon class="size-4" />
+                Front End
               </SocialLink>
             </li>
+          )}
+          {backGithub && (
             <li>
               <SocialLink href={backGithub}>
-                <GithubIcon class="size-6 text-white" id="svg-github" />
-                Backend Github
+                <GithubIcon class="size-4" />
+                Back End
               </SocialLink>
             </li>
-            {link !== "#" && (
-              <li class="mt-5 md:mt-0">
-                <SocialLink href={link}>
-                  <DirectionIcon class="size-6 text-white" />
-                  Ver proyecto
-                </SocialLink>
-              </li>
-            )}
-          </ul>
-        )}
-      </article>
-    )
-  )
-}
+          )}
+          {link && link !== "#" && (
+            <li>
+              <SocialLink href={link}>
+                <DirectionIcon class="size-4" />
+                Ver proyecto
+              </SocialLink>
+            </li>
+          )}
+        </ul>
+      )}
+    </article>
+  ))}
+</div>
+
+<style>
+  .project-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-radius: 1.25rem;
+    padding: 1.5rem;
+    transition: background 0.3s, border-color 0.3s, transform 0.3s;
+  }
+  .project-card:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(124, 58, 237, 0.28);
+    transform: translateY(-2px);
+  }
+
+  .tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    font-size: 0.7rem;
+    font-weight: 500;
+    padding: 0.2rem 0.6rem;
+    border-radius: 9999px;
+  }
+
+  .tag-gray    { background: rgba(100,100,110,0.3); color: #e2e8f0; border: 1px solid rgba(100,100,110,0.4); }
+  .tag-blue    { background: rgba(59,130,246,0.2);  color: #93c5fd; border: 1px solid rgba(59,130,246,0.35); }
+  .tag-blue2   { background: rgba(37,99,235,0.2);   color: #93c5fd; border: 1px solid rgba(37,99,235,0.35); }
+  .tag-yellow  { background: rgba(234,179,8,0.2);   color: #fde047; border: 1px solid rgba(234,179,8,0.35); }
+  .tag-indigo  { background: rgba(99,102,241,0.2);  color: #a5b4fc; border: 1px solid rgba(99,102,241,0.35); }
+  .tag-red     { background: rgba(239,68,68,0.2);   color: #fca5a5; border: 1px solid rgba(239,68,68,0.35); }
+  .tag-green   { background: rgba(74,222,128,0.15); color: #86efac; border: 1px solid rgba(74,222,128,0.3); }
+  .tag-emerald { background: rgba(16,185,129,0.15); color: #6ee7b7; border: 1px solid rgba(16,185,129,0.3); }
+  .tag-sky     { background: rgba(14,165,233,0.18); color: #7dd3fc; border: 1px solid rgba(14,165,233,0.32); }
+  .tag-lime    { background: rgba(101,163,13,0.2);  color: #bef264; border: 1px solid rgba(101,163,13,0.35); }
+  .tag-orange  { background: rgba(249,115,22,0.2);  color: #fdba74; border: 1px solid rgba(249,115,22,0.35); }
+  .tag-cyan    { background: rgba(6,182,212,0.18);  color: #67e8f9; border: 1px solid rgba(6,182,212,0.32); }
+</style>

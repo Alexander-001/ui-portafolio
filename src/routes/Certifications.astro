@@ -1,0 +1,135 @@
+---
+const certifications = [
+  {
+    name: "Google Cloud Digital Leader",
+    issuer: "Google Cloud",
+    year: "2025 - 2028",
+    description: "Certificación que valida el conocimiento sobre las capacidades de Google Cloud y cómo las soluciones cloud pueden transformar organizaciones.",
+    badge: "https://www.credly.com/badges/a83e33bb-4acf-401e-a1ab-16303d9ce209/linked_in_profile",
+    color: "rgba(59,130,246,0.18)",
+    border: "rgba(59,130,246,0.35)",
+    accent: "#7dd3fc",
+  },
+  {
+    name: "Adobe Certified Expert - Adobe Experience Manager Sites Developer",
+    issuer: "Adobe",
+    year: "2020 - 2022",
+    description: "Certificación que demuestra habilidades avanzadas en el desarrollo de sitios web utilizando Adobe Experience Manager, incluyendo la creación de componentes personalizados y la integración con otras soluciones Adobe.",
+    badge: "https://www.credly.com/badges/13f3334a-4ddc-4b78-9c35-e82b99ee01f8/linked_in_profile",
+    color: "rgba(59,130,246,0.18)",
+    border: "rgba(59,130,246,0.35)",
+    accent: "#7dd3fc",
+  },
+];
+---
+
+<div class="flex flex-col gap-4 mb-16">
+  {certifications.map(({ name, issuer, year, description, badge, color, border, accent }) => (
+    <div class="cert-card">
+      <div class="cert-icon" style={`background: ${color}; border-color: ${border};`}>
+        <svg viewBox="0 0 24 24" fill="none" class="size-6" style={`color: ${accent};`}>
+          <path stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
+            d="M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.627 48.627 0 0112 20.904a48.627 48.627 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.57 50.57 0 00-2.658-.813A59.905 59.905 0 0112 3.493a59.902 59.902 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0112 13.489a50.702 50.702 0 017.74-3.342M6.75 15a.75.75 0 100-1.5.75.75 0 000 1.5zm0 0v-3.675A55.378 55.378 0 0112 8.443m-7.007 11.55A5.981 5.981 0 006.75 15.75v-1.5" />
+        </svg>
+      </div>
+      <div class="cert-body">
+        <div class="flex items-center gap-2 flex-wrap mb-1">
+          <h3 class="cert-name">{name}</h3>
+          <span class="cert-year" style={`color: ${accent}; background: ${color}; border-color: ${border};`}>
+            {year}
+          </span>
+        </div>
+        <p class="cert-issuer">{issuer}</p>
+        <p class="cert-description">{description}</p>
+        {badge && (
+          <a href={badge} target="_blank" rel="noopener noreferrer" class="cert-link">
+            Ver credencial
+            <svg class="size-3" fill="none" viewBox="0 0 14 10" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
+            </svg>
+          </a>
+        )}
+      </div>
+    </div>
+  ))}
+</div>
+
+<style>
+  .cert-card {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-radius: 1rem;
+    padding: 1.25rem 1.5rem;
+    transition: background 0.25s, border-color 0.25s;
+  }
+  .cert-card:hover {
+    background: rgba(255, 255, 255, 0.055);
+    border-color: rgba(59, 130, 246, 0.3);
+  }
+
+  .cert-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.75rem;
+    height: 2.75rem;
+    border-radius: 0.75rem;
+    border-width: 1px;
+    border-style: solid;
+    flex-shrink: 0;
+  }
+
+  .cert-body {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .cert-name {
+    font-size: 1rem;
+    font-weight: 700;
+    color: white;
+  }
+
+  .cert-issuer {
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.45);
+    margin-bottom: 0.5rem;
+  }
+
+  .cert-description {
+    font-size: 0.82rem;
+    color: rgba(255,255,255,0.55);
+    line-height: 1.5;
+    margin-bottom: 0.75rem;
+  }
+
+  .cert-year {
+    font-size: 0.7rem;
+    font-weight: 500;
+    padding: 0.15rem 0.6rem;
+    border-radius: 9999px;
+    border-width: 1px;
+    border-style: solid;
+  }
+
+  .cert-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.78rem;
+    font-weight: 500;
+    color: rgba(255,255,255,0.5);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 9999px;
+    padding: 0.25rem 0.75rem;
+    background: rgba(255,255,255,0.04);
+    transition: color 0.2s, background 0.2s;
+  }
+  .cert-link:hover {
+    color: white;
+    background: rgba(255,255,255,0.09);
+  }
+</style>
